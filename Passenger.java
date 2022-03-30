@@ -1,6 +1,7 @@
 /**
  * Passenger class represents an individual passenger that will be
- * waiting for and boarding a public transit bus. 
+ * waiting for and boarding a public transit bus. Passenger will 
+ * then stay on the bus until they reach their destination.
  * 
  * System Simulation & Modeling - Spring 2022 - Dr Safko
  * Team 6: Brian Raley, Emerson Henkel, Doug White
