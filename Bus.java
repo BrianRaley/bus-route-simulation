@@ -10,9 +10,10 @@ import java.util.ArrayList;
 
 public class Bus {
     private int ID;     // ID of this bus
-    private boolean ascending;      // true if first stop is 1
+    private static boolean ascending;      // true if first stop is 1
     private int maxCapacity = 56;   // max # of passengers this bus can hold
     private int nextStop;   // next stop of this bus
+    private static int timeCounter;    // current time aboard the bus
     //private int fuel;     // current fuel 
     private ArrayList<Passenger> passengers;    // passengers on the bus
 
@@ -25,6 +26,7 @@ public class Bus {
         this.ascending = true;
         this.passengers = new ArrayList<Passenger>();
         this.nextStop = 0;
+        this.timeCounter = 0;
     }
 
     /**
@@ -50,6 +52,33 @@ public class Bus {
     public void setMaxCapacity(int max) {
         this.maxCapacity = max;
     }
+
+    /**
+     * Returns if the train is ascending
+     * True for ascending
+     * False for descending
+     * @return true or false
+     */
+    public static boolean getAscending(){
+        return ascending;
+    }
+
+    /**
+     * Return the time aboard the train
+     * @return int value of time since initial departure
+     */
+    public static int getTimeCounter(){
+        return timeCounter;
+    }
+
+    /**
+     * Increase the time counter aboard the bus
+     * @param timeIncrease int
+     */
+    public static void increaseTime(int timeIncrease){
+        timeCounter += timeIncrease + timeCounter;
+    }
+
 
     /**
      * Get the current # of passengers on the bus
