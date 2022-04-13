@@ -8,15 +8,18 @@
  */
 
 public class Passenger {
+    private int id;
     private int startingStop;       // the bus stop this passenger is starting from
     private int destinationStop;    // this passenger's destination
+    // private int startingStopArrivalTime; // when passenger got to starting bus stop
     private int timeArrived;    // time this passenger arrived at bus stop
 
     /**
      * Creates an instance of a passenger with a destination
      * @param destination The passenger's destination bus stop
      */
-    public Passenger(int startingStop, int destinationStop) {
+    public Passenger(int id, int startingStop, int destinationStop) {
+        this.id = id;
         this.startingStop = startingStop;
         this.destinationStop = destinationStop;
         this.timeArrived = 0;
@@ -61,6 +64,23 @@ public class Passenger {
     public int getTimeArrived() {
         return timeArrived;
     }
+
+    public int getID(){
+        return this.id;
+    }
+
+    // override compareTo method to help sort customers in queue
+    // public int compareTo(Passenger pass){
+    //     if (destinationStop == pass.getDestination()){
+    //         return 0;
+    //     }
+    //     else if (destinationStop > pass.getDestination()){
+    //         return 1;
+    //     }
+    //     else{
+    //         return -1;
+    //     }
+    // }
 
     /**
      * Sets the time this passenger arrived at the bus stop
