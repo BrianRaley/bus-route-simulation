@@ -1,6 +1,8 @@
 import java.util.ArrayList;
-
 public class Driver {
+    static int hour = 12;
+    static int minute1 = 0;
+    static int minute2 = 0;
     public static void main(String[] args) {
 
         /**
@@ -42,5 +44,10 @@ public class Driver {
         for(int i=0; i<route.size(); i++){
             trainOne.interact();
         }
+
+        
+        Timelapse t = new Timelapse();
+        t.start();
+        
     }
 }

@@ -15,6 +15,7 @@ public class Train {
     private boolean ascending;      // true if first stop is 1
     private int maxCapacity = 56;   // max # of passengers this bus can hold
     private int currentStopIndex; // current stop bus is at
+    private int timeToNextStop = 0;     // time in minutes until next stop
     // private int nextStop;   // next stop of this bus
     //private int fuel;     // current fuel 
     private ArrayList<Passenger> passengers;    // passengers on the bus
