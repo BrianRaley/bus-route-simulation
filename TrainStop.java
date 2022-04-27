@@ -73,19 +73,18 @@ public class TrainStop {
     public void populateStop(){
         int numOfPassengersWaiting = (int) (this.lowerBound + (Math.random() * (this.upperBound - this.lowerBound)));
         for(int i=0; i< numOfPassengersWaiting; i++){
-            int destinationIndex = (int) (this.stopID + (Math.random() * (12 - this.stopID)));
-            waitingPassengers.add(new Passenger(i, (this.stopID-1), destinationIndex));
-            
+            waitingPassengers.add(new Passenger(i, this.stopID));         
         }
-        // listPassengers();
+         listPassengers();
     }
 
     public void listPassengers(){
-        System.out.println("              At stop " + (this.stopID-1) + "(" + getStopName() + ")" + " there is...");
+        System.out.println("              At stop " + (this.stopID) + "(" + getStopName() + ")" + " there is...");
         for(Passenger p : waitingPassengers){
             System.out.print("Passenger " + p.getID());
             System.out.print(" starting at "+p.getStart());
-            System.out.println(" and going to " + p.getDestination());
+            System.out.print(" and going to " + p.getDestination());
+            System.out.println(" " + p.getWestbound());
         }
     }
 }

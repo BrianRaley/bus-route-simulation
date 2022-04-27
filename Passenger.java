@@ -13,16 +13,17 @@ public class Passenger {
     private int destinationStop;    // this passenger's destination
     // private int startingStopArrivalTime; // when passenger got to starting bus stop
     private int timeArrived;    // time this passenger arrived at bus stop
+    private boolean westbound; // true if passenger wants to head into Philly, false if headed to Lindenwold
 
     /**
      * Creates an instance of a passenger with a destination
      * @param destination The passenger's destination bus stop
      */
-    public Passenger(int id, int startingStop, int destinationStop) {
+    public Passenger(int id, int startingStop) {
         this.id = id;
         this.startingStop = startingStop;
-        this.destinationStop = destinationStop;
         this.timeArrived = 0;
+        shuffleDestination();
     }
 
     /**
@@ -31,6 +32,10 @@ public class Passenger {
      */
     public int getStart() {
         return startingStop;
+    }
+
+    public boolean getWestbound(){
+        return this.westbound;
     }
 
     /**
@@ -91,5 +96,26 @@ public class Passenger {
             throw new IllegalArgumentException("Invalid arrival time");
         }
         this.timeArrived = timeArrived;
+    }
+
+    /**
+     * Sets destination randomly for a passenger, and makes sure
+     * their destination is not set to where they already are. Also sets direction
+     */
+    public void shuffleDestination(){
+        int destinationIndex = this.startingStop;
+        while(destinationIndex == this.startingStop){
+            destinationIndex = (int) (Math.random() * 13);
+        }
+        if(destinationIndex > this.startingStop){
+            this.westbound = true;
+        }
+        else if (destinationIndex < this.startingStop){
+            this.westbound = false;
+        }
+        else{
+            System.out.println("ERROR: check destination and starting index for " + this.id);
+        }
+        this.destinationStop = destinationIndex;
     }
 }

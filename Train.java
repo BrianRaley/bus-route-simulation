@@ -13,7 +13,7 @@ public class Train {
     private int ID;     // ID of this bus
     ArrayList<TrainStop> route;
     private boolean ascending;      // true if first stop is 1
-    private int maxCapacity = 56;   // max # of passengers this bus can hold
+    private int maxCapacity = 200;   // max # of passengers this bus can hold
     private int currentStopIndex; // current stop bus is at
     // private int nextStop;   // next stop of this bus
     //private int fuel;     // current fuel 
@@ -64,21 +64,36 @@ public class Train {
         return passengers.size();
     }
 
+    public ArrayList<Passenger> getPassengers(){
+        return this.passengers;
+    }
+
+    public int checkStopsTotal(){
+        int sum = 0;
+        for (TrainStop t : route) {
+            sum += t.getWaitingPassengersQueue().size();
+        }
+        return sum;
+    }
+
     /**
      * 
      */
     public void getNextStop() {
         if(ascending) {
             currentStopIndex++;
-            if(currentStopIndex == 12) {
-                ascending = false;
-            }
         }
         else {
             currentStopIndex--;
-            if(currentStopIndex == 0) {
-                ascending = true;
-            }
+        }
+    }
+
+    public void assessDirection(){
+        if(currentStopIndex == 12){
+            ascending = false;
+        }
+        else if(currentStopIndex == 0){
+            ascending = true;
         }
     }
 
@@ -87,8 +102,9 @@ public class Train {
      * Add waiting passengers as long as there is room in the train. Move on to next station.
      */
     public void interact(){
-        // System.out.println(currentStation.getStopName());
+        System.out.println("AT " + route.get(currentStopIndex).getStopName().toUpperCase());
         relievePassengersFromBus();
+        assessDirection();
         addPassengersFromStop();
         getNextStop();
     }
@@ -97,26 +113,42 @@ public class Train {
      * 
      */
     public void relievePassengersFromBus(){
-        // System.out.println("passengers let go");
         // Collections.sort(passengers);
         for(int i=0; i<passengers.size(); i++){
             Passenger p = passengers.get(i);
             if(p.getDestination() == currentStopIndex){
+                System.out.println("Removed " + p.getID());
                 passengers.remove(p);
             }
         }
     }
 
     /**
-     * 
+     * Checks if train has room, if station still has people, if each passenger wants to go this
+     * train's direction before allowing the passenger to board. If a given passenger wants to go other way,
+     * the loop will skip that person on the next check using "lastP" variable
      */
     public void addPassengersFromStop(){
-        // System.out.println("passengers added");
+        int lastP = 0;
         TrainStop currentStation = route.get(currentStopIndex);
-        while(passengers.size() != this.maxCapacity &&
-              currentStation.getWaitingPassengersQueue().isEmpty() != true){
-            Passenger p = currentStation.getWaitingPassengersQueue().remove(0);
-            this.passengers.add(p);
+        while(passengers.size() < this.maxCapacity &&
+                currentStation.getWaitingPassengersQueue().isEmpty() != true){
+            if(lastP >= currentStation.getWaitingPassengersQueue().size()){
+                break;
+            }
+            Passenger p = currentStation.getWaitingPassengersQueue().get(lastP);
+            if(p.getWestbound() == this.ascending){
+                currentStation.getWaitingPassengersQueue().remove(lastP);
+                this.passengers.add(p);
+                System.out.println("Boarded!!" + p.getID() + " from " + p.getStart());
+            }
+            else{
+                lastP++;
+                System.out.println("i'll pass...");
+            }
+        }
+        if(passengers.size() >= this.maxCapacity){
+            System.out.println("CAPACITY HAS BEEN REACHED");
         }
     }
 }
