@@ -14,6 +14,7 @@ public class TrainStop {
     private ArrayList<Passenger> waitingPassengers;
     private int lowerBound;
     private int upperBound;
+    private int timeToNextStop;
 
     /**
      * Creates an instance of a bus stop with a stop #, name, 
@@ -21,7 +22,7 @@ public class TrainStop {
      * @param stopID
      * @param stopName
      */
-    public TrainStop(int stopID, String stopName, int lowerBound, int upperBound) {
+    public TrainStop(int stopID, String stopName, int lowerBound, int upperBound, int timeToNextStop) {
         this.stopID = stopID;
         this.stopName = stopName;
         this.lowerBound = lowerBound;
@@ -44,6 +45,10 @@ public class TrainStop {
      */
     public String getStopName() {
         return stopName;
+    }
+
+    public int getTimeToNextStop() {
+        return timeToNextStop;
     }
 
     /**
@@ -77,7 +82,7 @@ public class TrainStop {
             waitingPassengers.add(new Passenger(i, (this.stopID-1), destinationIndex));
             
         }
-        // listPassengers();
+         listPassengers();
     }
 
     public void listPassengers(){

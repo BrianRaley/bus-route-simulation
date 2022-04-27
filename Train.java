@@ -65,6 +65,14 @@ public class Train {
         return passengers.size();
     }
 
+    public int getTimeToNextStop() {
+        return timeToNextStop;
+    }
+
+    public void setTimeToNextStop() {
+        
+    }
+
     /**
      * 
      */
@@ -82,6 +90,8 @@ public class Train {
             }
         }
     }
+
+    
 
     /**
      * Find out which station we are arriving at. Relieve passengers that want to get off here.
