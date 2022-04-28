@@ -1,13 +1,10 @@
-import java.awt.Dimension;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.*;
 public class Timelapse {
     private int displayHour = 12, displayMinute = 0, minute = 0;
-    //WestboundRoute westbound = new WestboundRoute();
+    GUI gui = new GUI();
+    WestboundRoute westbound = new WestboundRoute();
     //Train t1 = new Train(1, 0, westbound.getWestboundRoute());
-    static JFrame frame;
-    static JLabel timerLabel;
 
     public Timelapse() {
         
@@ -17,15 +14,62 @@ public class Timelapse {
      * Begins the simulation timer
      */
     public void start() {
-        initGUI();
+        gui.initGUI();
         Timer timer = new Timer();
             TimerTask task = new TimerTask() {
                 public void run() {
+                    for(TrainStop stop : westbound.getWestboundRoute()) {
+                        stop.populateStop();
+                        int stopNum = stop.getStopID();
+                        switch(stopNum) {
+                            case 1:
+                                gui.setStop1Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 2:
+                                gui.setStop2Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 3:
+                                gui.setStop3Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 4:
+                                gui.setStop4Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 5:
+                                gui.setStop5Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 6:
+                                gui.setStop6Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 7:
+                                gui.setStop7Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 8:
+                                gui.setStop8Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 9:
+                                gui.setStop9Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 10:
+                                gui.setStop10Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 11:
+                                gui.setStop11Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 12:
+                                gui.setStop12Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                            case 13:
+                                gui.setStop13Total(stop.getSizeOfWaitingPassengers());
+                                break;
+                        }
+                    }
+
                     incrementTimer();
+                    
             }
         };
     
-        timer.scheduleAtFixedRate(task, 500, 1000);
+        timer.scheduleAtFixedRate(task, 500, 2000);
     }
 
     /**
@@ -37,24 +81,6 @@ public class Timelapse {
             return displayHour + ":0" + displayMinute;
         }
         return displayHour + ":" + displayMinute;    
-    }
-
-    /**
-     * Initializes GUI
-     */
-    public void initGUI() {
-        frame = new JFrame("Train Simulation");
-
-        timerLabel = new JLabel();
-        Dimension size = timerLabel.getPreferredSize();
-        timerLabel.setBounds(10, 10, size.width, size.height);
-
-        JPanel panel = new JPanel();
-        panel.add(timerLabel);
-        
-        frame.add(panel);
-        frame.setSize(300, 300);
-        frame.setVisible(true);
     }
 
     /**
@@ -75,7 +101,6 @@ public class Timelapse {
             displayMinute++;
             //System.out.println(hour + ":" + minute);
         }
-        timerLabel.setText(getTimeString());
-        System.out.println(minute);
+        gui.setTimer(getTimeString());
     }
 }

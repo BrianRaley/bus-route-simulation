@@ -51,6 +51,10 @@ public class TrainStop {
         return timeToNextStop;
     }
 
+    public int getSizeOfWaitingPassengers() {
+        return waitingPassengers.size();
+    }
+
     /**
      * Adds a Passenger to the wait list
      * @param Passenger p to be added to the wait queue
@@ -82,7 +86,7 @@ public class TrainStop {
             waitingPassengers.add(new Passenger(i, (this.stopID-1), destinationIndex));
             
         }
-         listPassengers();
+        //listPassengers();
     }
 
     public void listPassengers(){
