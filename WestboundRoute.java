@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class WestboundRoute {
-    private ArrayList<TrainStop> westbound = new ArrayList<TrainStop>();
+    public ArrayList<TrainStop> westbound = new ArrayList<TrainStop>();
     TrainStop STOP_1 = new TrainStop(1, "Lindenwold", 10, 20, 2);
     TrainStop STOP_2 = new TrainStop(2, "Ashland", 10, 20, 1);
     TrainStop STOP_3 = new TrainStop(3, "Woodcrest", 10, 20, 3);
@@ -39,4 +39,12 @@ public class WestboundRoute {
     public int size() {
         return westbound.size();
     }
+
+    public String toString() {
+        return westbound.toString();
+    }
+
+    //public int getTimeToNextStop(int index) {
+    //    return westbound.get(index).getTimeToNextStop();
+    //}
 }

@@ -27,6 +27,7 @@ public class TrainStop {
         this.stopName = stopName;
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
+        this.timeToNextStop = timeToNextStop;
         this.waitingPassengers = new ArrayList<Passenger>();
         populateStop();
     }
@@ -49,6 +50,10 @@ public class TrainStop {
 
     public int getTimeToNextStop() {
         return timeToNextStop;
+    }
+
+    public int getSizeOfWaitingPassengers() {
+        return waitingPassengers.size();
     }
 
     /**
@@ -82,7 +87,7 @@ public class TrainStop {
             waitingPassengers.add(new Passenger(i, (this.stopID-1), destinationIndex));
             
         }
-         listPassengers();
+        //listPassengers();
     }
 
     public void listPassengers(){
@@ -92,5 +97,9 @@ public class TrainStop {
             System.out.print(" starting at "+p.getStart());
             System.out.println(" and going to " + p.getDestination());
         }
+    }
+
+    public String toString() {
+        return stopID + " " + timeToNextStop;
     }
 }
