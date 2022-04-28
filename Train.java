@@ -15,6 +15,7 @@ public class Train {
     private boolean ascending;      // true if first stop is 1
     private int maxCapacity = 56;   // max # of passengers this bus can hold
     private int currentStopIndex; // current stop bus is at
+    private int timeToNextStop = 0;     // time in minutes until next stop
     // private int nextStop;   // next stop of this bus
     //private int fuel;     // current fuel 
     private ArrayList<Passenger> passengers;    // passengers on the bus
@@ -64,6 +65,14 @@ public class Train {
         return passengers.size();
     }
 
+    public int getTimeToNextStop() {
+        return timeToNextStop;
+    }
+
+    public void setTimeToNextStop() {
+        
+    }
+
     /**
      * 
      */
@@ -81,6 +90,8 @@ public class Train {
             }
         }
     }
+
+    
 
     /**
      * Find out which station we are arriving at. Relieve passengers that want to get off here.
