@@ -1,10 +1,12 @@
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.ArrayList;
 public class Timelapse {
     private int displayHour = 12, displayMinute = 0, minute = 0;
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
-    //Train t1 = new Train(1, 0, westbound.getWestboundRoute());
+    ArrayList<TrainStop> route = westbound.getWestboundRoute();
+    Train train1 = new Train(1, 0, route);
 
     public Timelapse() {
         
@@ -15,12 +17,22 @@ public class Timelapse {
      */
     public void start() {
         gui.initGUI();
+        train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextStop());
+        System.out.println(westbound.toString());
+        System.out.println(getTimeString());
+        System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
+        System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
+        
+
         Timer timer = new Timer();
             TimerTask task = new TimerTask() {
                 public void run() {
                     populateStops();
-                    incrementTimer();
-                    
+                    trainOps();
+                    incrementTimer();  
+                    System.out.println(getTimeString());
+                    System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());       
+                    System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
             }
         };
     
@@ -36,6 +48,14 @@ public class Timelapse {
             return displayHour + ":0" + displayMinute;
         }
         return displayHour + ":" + displayMinute;    
+    }
+
+    /**
+     * Returns the value of the internal timer
+     * @return int minute
+     */
+    public int getTime() {
+        return minute;
     }
 
     /**
@@ -104,6 +124,13 @@ public class Timelapse {
                     gui.setStop13Total(stop.getSizeOfWaitingPassengers());
                     break;
             }
+        }
+    }
+
+    public void trainOps() {
+        train1.advance();
+        if(train1.getTimeToNextStop() == 0) {
+            train1.setTimeToNextStop(westbound.getWestboundRoute().get(train1.getcurrentStopIndex()).getTimeToNextStop());
         }
     }
 }
