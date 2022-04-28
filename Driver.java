@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 public class Driver {
     static int time = 0;
+    
     public static void main(String[] args) {
-
+        
         /**
          * Instantiate all stops with id, name, lower bound of paassengers in an interval,
          * upper bound of paassengers in an interval. (based on data collection for each stop)
