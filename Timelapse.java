@@ -18,52 +18,7 @@ public class Timelapse {
         Timer timer = new Timer();
             TimerTask task = new TimerTask() {
                 public void run() {
-                    for(TrainStop stop : westbound.getWestboundRoute()) {
-                        stop.populateStop();
-                        int stopNum = stop.getStopID();
-                        switch(stopNum) {
-                            case 1:
-                                gui.setStop1Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 2:
-                                gui.setStop2Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 3:
-                                gui.setStop3Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 4:
-                                gui.setStop4Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 5:
-                                gui.setStop5Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 6:
-                                gui.setStop6Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 7:
-                                gui.setStop7Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 8:
-                                gui.setStop8Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 9:
-                                gui.setStop9Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 10:
-                                gui.setStop10Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 11:
-                                gui.setStop11Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 12:
-                                gui.setStop12Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                            case 13:
-                                gui.setStop13Total(stop.getSizeOfWaitingPassengers());
-                                break;
-                        }
-                    }
-
+                    populateStops();
                     incrementTimer();
                     
             }
@@ -102,5 +57,53 @@ public class Timelapse {
             //System.out.println(hour + ":" + minute);
         }
         gui.setTimer(getTimeString());
+    }
+
+    public void populateStops() {
+        for(TrainStop stop : westbound.getWestboundRoute()) {
+            stop.populateStop();
+            int stopNum = stop.getStopID();
+            switch(stopNum) {
+                case 1:
+                    gui.setStop1Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 2:
+                    gui.setStop2Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 3:
+                    gui.setStop3Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 4:
+                    gui.setStop4Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 5:
+                    gui.setStop5Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 6:
+                    gui.setStop6Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 7:
+                    gui.setStop7Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 8:
+                    gui.setStop8Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 9:
+                    gui.setStop9Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 10:
+                    gui.setStop10Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 11:
+                    gui.setStop11Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 12:
+                    gui.setStop12Total(stop.getSizeOfWaitingPassengers());
+                    break;
+                case 13:
+                    gui.setStop13Total(stop.getSizeOfWaitingPassengers());
+                    break;
+            }
+        }
     }
 }
