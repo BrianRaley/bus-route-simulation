@@ -8,7 +8,7 @@
  */
 
 public class Passenger {
-    private int id;
+    //private int id;
     private int startingStop;       // the bus stop this passenger is starting from
     private int destinationStop;    // this passenger's destination
     // private int startingStopArrivalTime; // when passenger got to starting bus stop
@@ -19,12 +19,16 @@ public class Passenger {
      * Creates an instance of a passenger with a destination
      * @param destination The passenger's destination bus stop
      */
-    public Passenger(int id, int startingStop, int destinationStop) {
-        this.id = id;
+    public Passenger(int startingStop, int destinationStop) {
         this.startingStop = startingStop;
         this.destinationStop = destinationStop;
         this.timeArrived = 0;
-        
+        if(startingStop < destinationStop) {
+            this.westbound = true;
+        }
+        else {
+            this.westbound = false;
+        }
     }
 
     /**
@@ -67,8 +71,12 @@ public class Passenger {
         return timeArrived;
     }
 
-    public int getID(){
-        return this.id;
+    /**
+     * Returns true if passenger is traveling Westbound
+     * @return boolean westbound
+     */
+    public boolean getDirection() {
+        return westbound;
     }
 
     // override compareTo method to help sort customers in queue
@@ -93,5 +101,9 @@ public class Passenger {
             throw new IllegalArgumentException("Invalid arrival time");
         }
         this.timeArrived = timeArrived;
+    }
+
+    public String toString() {
+        return "start: " + startingStop + " end: " + destinationStop;
     }
 }

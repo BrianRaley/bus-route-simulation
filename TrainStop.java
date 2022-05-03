@@ -106,7 +106,7 @@ public class TrainStop {
         int numOfPassengersWaiting = (int) (this.lowerBound + (Math.random() * (this.upperBound - this.lowerBound)));
         for(int i=0; i< numOfPassengersWaiting; i++){
             int destinationIndex = (int) (this.stopID + (Math.random() * (12 - this.stopID)));
-            waitingPassengers.add(new Passenger(i, (this.stopID-1), destinationIndex));
+            waitingPassengers.add(new Passenger((this.stopID-1), destinationIndex));
             
         }
         //listPassengers();
@@ -118,7 +118,6 @@ public class TrainStop {
     public void listPassengers(){
         System.out.println("              At stop " + (this.stopID-1) + "(" + getStopName() + ")" + " there is...");
         for(Passenger p : waitingPassengers){
-            System.out.print("Passenger " + p.getID());
             System.out.print(" starting at "+p.getStart());
             System.out.println(" and going to " + p.getDestination());
         }

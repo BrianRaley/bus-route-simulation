@@ -143,6 +143,7 @@ public class Timelapse {
         train1.advance();
         gui.setTrainACurrentPassengers(train1.getNumOfPassengers());
         if(train1.getIsStopped()) {
+            train1.interact();
             gui.setTrainACurrentStop(westRoute.get(train1.getcurrentStopIndex()).getStopName()); 
         }
         else {

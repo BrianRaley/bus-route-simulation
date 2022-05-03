@@ -14,7 +14,7 @@ public class Train {
     ArrayList<TrainStop> route;     // the route the train is on
     private boolean westbound;      // true if train is traveling westbound
     private boolean isStopped = true;
-    private int maxCapacity = 56;   // max # of passengers this train can hold
+    private int maxCapacity = 1000;   // max # of passengers this train can hold
     private int currentStopIndex; // current stop bus is at
     private int timeToNextStop;     // time in minutes until next stop
     private ArrayList<Passenger> passengers;    // passengers on the bus
@@ -146,19 +146,19 @@ public class Train {
      */
     public void interact(){
         // System.out.println(currentStation.getStopName());
-        relievePassengersFromBus();
+        relievePassengersFromTrain();
         addPassengersFromStop();
     }
 
     /**
      * Removes passengers from the train 
      */
-    public void relievePassengersFromBus(){
-        // System.out.println("passengers let go");
+    public void relievePassengersFromTrain(){
         // Collections.sort(passengers);
         for(int i=0; i<passengers.size(); i++){
             Passenger p = passengers.get(i);
             if(p.getDestination() == currentStopIndex){
+                System.out.println("Removed: " + p);
                 passengers.remove(p);
             }
         }
@@ -170,9 +170,10 @@ public class Train {
     public void addPassengersFromStop(){
         // System.out.println("passengers added");
         TrainStop currentStation = route.get(currentStopIndex);
-        while(passengers.size() != this.maxCapacity &&
+        while(passengers.size() < this.maxCapacity &&
               currentStation.getWaitingPassengersQueue().isEmpty() != true){
             Passenger p = currentStation.getWaitingPassengersQueue().remove(0);
+            System.out.println("Added: " + p);
             this.passengers.add(p);
         }
     }
