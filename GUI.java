@@ -13,7 +13,7 @@ public class GUI {
     static JLabel trainA, trainB, totalPassengers, currentStop;
     static JTextField trainATotalPassengers, trainACurrentStopName, trainBTotalPassengers, trainBCurrentStopName;
     
-    static JButton start, pause, reset;
+    static JButton start, stop, reset, resume;
 
     static Timelapse t;
 
@@ -21,6 +21,10 @@ public class GUI {
 
     }
 
+    /**
+     * Main method - Initializes GUI and prepares for simulation
+     * @param args
+     */
     public static void main(String[] args) {
         t = new Timelapse();
     }
@@ -32,7 +36,7 @@ public class GUI {
         frame = new JFrame("Train Simulation");
 
         // Initializing all labels
-        timerLabel = new JLabel();
+        timerLabel = new JLabel("Current time: 12:00" );
         waiting = new JLabel("# of waiting passengers");
         stop1 = new JLabel("Stop 1: Lindenwold");
         stop2 = new JLabel("Stop 2: Ashland");
@@ -77,22 +81,52 @@ public class GUI {
 
         // Initializing buttons
         start = new JButton("Start");
+        start.setEnabled(true);
+
+        resume = new JButton("Resume");
+        resume.setEnabled(false);
+
+        stop = new JButton("Stop");
+        stop.setEnabled(false);
+
+        reset = new JButton("Reset");
+        reset.setEnabled(false);
         start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 t.start();
+                start.setEnabled(false);
+                stop.setEnabled(true);
+                reset.setEnabled(false);
             }
         });
 
-        pause = new JButton("Pause");
-
-
-        reset = new JButton("Reset");
+        stop.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                t.stopSimulation();
+                stop.setEnabled(false);
+                reset.setEnabled(true);
+                resume.setEnabled(true);
+            }
+        });
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                t.reset();
+                start.setEnabled(false);
+                resume.setEnabled(false);
+                stop.setEnabled(true);
+                reset.setEnabled(false);
             }
         });
 
+        resume.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                t.resumeSimulation();
+                resume.setEnabled(false);
+                stop.setEnabled(true);
+                start.setEnabled(false);
+                reset.setEnabled(false);
+            }
+        });
         
         // Adding components to panel
         JPanel panel = new JPanel();
@@ -101,10 +135,13 @@ public class GUI {
         panel.add(timerLabel);
         panel.add(waiting);
 
+        // Buttons
         panel.add(start);
-        panel.add(pause);
+        panel.add(stop);
         panel.add(reset);
+        panel.add(resume);
 
+        // Stops
         panel.add(stop1);
         panel.add(stop2);
         panel.add(stop3);
@@ -133,6 +170,7 @@ public class GUI {
         panel.add(stop12Total);
         panel.add(stop13Total);
 
+        // Train info
         panel.add(currentStop);
         panel.add(totalPassengers);
 
@@ -199,7 +237,8 @@ public class GUI {
         trainBCurrentStopName.setLocation(280, 340);
 
         start.setLocation(10, 400);
-        pause.setLocation(130, 400);
+        resume.setLocation(10, 426);
+        stop.setLocation(130, 400);
         reset.setLocation(250, 400);
 
         // Setting component sizes
@@ -257,7 +296,8 @@ public class GUI {
         trainBCurrentStopName.setSize(150, 16);
 
         start.setSize(90, 24);
-        pause.setSize(90, 24);
+        resume.setSize(90, 24);
+        stop.setSize(90, 24);
         reset.setSize(90, 24);
         
         // Building frame
