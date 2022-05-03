@@ -141,11 +141,9 @@ public class Train {
     }
 
     /**
-     * Find out which station we are arriving at. Relieve passengers that want to get off here.
-     * Add waiting passengers as long as there is room in the train. Move on to next station.
+     * Adds and removes passengers when the train makes a stop. 
      */
     public void interact(){
-        // System.out.println(currentStation.getStopName());
         relievePassengersFromTrain();
         addPassengersFromStop();
     }
@@ -174,7 +172,10 @@ public class Train {
               currentStation.getWaitingPassengersQueue().isEmpty() != true){
             Passenger p = currentStation.getWaitingPassengersQueue().remove(0);
             System.out.println("Added: " + p);
-            this.passengers.add(p);
+            if((p.getDirection() && getWestbound()) ||
+                !p.getDirection() && !getWestbound()) {
+                    this.passengers.add(p);
+            }
         }
     }
 }
