@@ -204,6 +204,7 @@ public class GUI {
         frame.add(panel);
         frame.setSize(500, 500);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     /**

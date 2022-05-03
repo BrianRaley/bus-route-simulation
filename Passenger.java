@@ -13,6 +13,7 @@ public class Passenger {
     private int destinationStop;    // this passenger's destination
     // private int startingStopArrivalTime; // when passenger got to starting bus stop
     private int timeArrived;    // time this passenger arrived at bus stop
+    private boolean westbound;
 
     /**
      * Creates an instance of a passenger with a destination
@@ -23,6 +24,7 @@ public class Passenger {
         this.startingStop = startingStop;
         this.destinationStop = destinationStop;
         this.timeArrived = 0;
+        
     }
 
     /**
