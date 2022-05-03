@@ -1,5 +1,5 @@
 /**
- * BusStop class represents an instance of a bus stop with a
+ * TrainStop class represents an instance of a train stop with a
  * queue of waiting passengers. 
  * 
  * System Simulation & Modeling - Spring 2022 - Dr Safko
@@ -9,8 +9,8 @@
 import java.util.ArrayList;
 
 public class TrainStop {
-    private int stopID;     // # of this bus stop
-    private String stopName;  // name of this bus stop
+    private int stopID;     // # of this train stop
+    private String stopName;  // name of this train stop
     private ArrayList<Passenger> waitingPassengers;
     private int lowerBound;
     private int upperBound;
@@ -18,7 +18,7 @@ public class TrainStop {
     private int timeToNextEastboundStop;
 
     /**
-     * Creates an instance of a bus stop with a stop #, name, 
+     * Creates an instance of a train stop with a stop #, name, 
      * and an ArrayList of waiting Passengers
      * @param stopID
      * @param stopName
@@ -34,7 +34,7 @@ public class TrainStop {
     }
 
     /**
-     * Returns the ID # of this bus stop
+     * Returns the ID # of this train stop
      * @return int stopID
      */
     public int getStopID() {
@@ -42,7 +42,7 @@ public class TrainStop {
     }
 
     /**
-     * Returns the name of this bus stop
+     * Returns the name of this train stop
      * @return String stopName
      */
     public String getStopName() {
@@ -116,7 +116,7 @@ public class TrainStop {
     }
 
     /**
-     * 
+     * Prints all passengers at this stop to console
      */
     public void listPassengers(){
         System.out.println("              At stop " + (this.stopID-1) + "(" + getStopName() + ")" + " there is...");
@@ -133,6 +133,10 @@ public class TrainStop {
         waitingPassengers.clear();
     }
 
+    /**
+     * toString method
+     * @return String of stop ID, time to next westbound stop, time to next eastbound stop
+     */
     public String toString() {
         return stopID + " " + timeToNextWestboundStop + " " + timeToNextEastboundStop; 
     }

@@ -1,3 +1,10 @@
+/**
+ * This class represents the Westbound Patco route.
+ * 
+ * System Simulation & Modeling - Spring 2022 - Dr Safko
+ * Team 6: Brian Raley, Emerson Henkel, Doug White
+ */
+
 import java.util.ArrayList;
 
 public class WestboundRoute {
@@ -16,6 +23,9 @@ public class WestboundRoute {
     TrainStop STOP_12 = new TrainStop(12, "12/13th & Locust St.", 10, 20, 1, 1); 
     TrainStop STOP_13 = new TrainStop(13, "15/16th & Locust St.", 10, 20, -1, 1);
         
+    /**
+     * Constructor - adds all stops to the route
+     */
     public WestboundRoute() {
         westbound.add(STOP_1);
         westbound.add(STOP_2);
@@ -32,19 +42,26 @@ public class WestboundRoute {
         westbound.add(STOP_13);
     }
 
+    /**
+     * Returns an ArrayList of TrainStops on this route
+     * @return ArrayList<TrainStop> westbound
+     */
     public ArrayList<TrainStop> getWestboundRoute() {
         return westbound;
     }
 
+    /**
+     * Returns the number of TrainStops within the Westbound route
+     * @return size of the Westbound route ArrayList
+     */
     public int size() {
         return westbound.size();
     }
 
+    /**
+     * toString method
+     */
     public String toString() {
         return westbound.toString();
     }
-
-    //public int getTimeToNextStop(int index) {
-    //    return westbound.get(index).getTimeToNextStop();
-    //}
 }

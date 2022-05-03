@@ -58,7 +58,7 @@ public class Train {
 
     /**
      * Returns the current stop index of this train
-     * @return
+     * @return int currentStopIndex
      */
     public int getcurrentStopIndex() {
         return currentStopIndex;
@@ -73,8 +73,8 @@ public class Train {
     }
 
     /**
-     * 
-     * @return
+     * Returns true if the train is stopped
+     * @return boolean isStopped
      */
     public boolean getIsStopped() {
         return isStopped;

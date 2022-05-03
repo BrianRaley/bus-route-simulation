@@ -79,6 +79,10 @@ public class Passenger {
         return westbound;
     }
 
+    /**
+     * toString method
+     * @return String of passengers starting & destination stops
+     */
     public String toString() {
         return "start: " + startingStop + " end: " + destinationStop;
     }

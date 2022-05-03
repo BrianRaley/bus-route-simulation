@@ -1,3 +1,10 @@
+/**
+ * This class builds the GUI. 
+ * 
+ * System Simulation & Modeling - Spring 2022 - Dr Safko
+ * Team 6: Brian Raley, Emerson Henkel, Doug White
+ */
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -17,6 +24,9 @@ public class GUI {
 
     static Timelapse t;
 
+    /**
+     * Constructor
+     */
     public GUI() {
 
     }
@@ -306,7 +316,6 @@ public class GUI {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-
 
     /**
      * Sets the JLabel timer value to the current simulated time

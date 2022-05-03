@@ -1,8 +1,17 @@
+/**
+ * This class maintains the simulation by using a Timer with TimerTasks.
+ * Each interval simulates the passing of one minute as a train travels 
+ * along a set route.
+ * 
+ * System Simulation & Modeling - Spring 2022 - Dr Safko
+ * Team 6: Brian Raley, Emerson Henkel, Doug White
+ */
+
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.ArrayList;
 public class Timelapse {
-    private int displayHour = 12, displayMinute = 0, minute = 0;
+    private int displayHour = 12, displayMinute = 0;
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
     ArrayList<TrainStop> westRoute = westbound.getWestboundRoute();
@@ -24,12 +33,15 @@ public class Timelapse {
             }
     };
 
+    /**
+     * Constructor - initializes the GUI
+     */
     public Timelapse() {
         gui.initGUI();
     }
 
     /**
-     * Begins the simulation timer
+     * Begins the simulation
      */
     public void start() {
         train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
@@ -61,19 +73,10 @@ public class Timelapse {
     }
 
     /**
-     * Returns the value of the internal timer
-     * @return int minute
-     */
-    public int getTime() {
-        return minute;
-    }
-
-    /**
      * Increments timer and display time by one minute
      */
     public void incrementTimer() {
         if(displayMinute == 59) {
-            minute++;
             displayMinute = 0;
             displayHour++;
             if(displayHour >= 12) {
@@ -82,7 +85,6 @@ public class Timelapse {
             //System.out.println(hour + ":0" + minute);
         }
         else {
-            minute++;
             displayMinute++;
             //System.out.println(hour + ":" + minute);
         }
@@ -191,7 +193,7 @@ public class Timelapse {
     }
 
     /**
-     * Resets the simulation to default
+     * Resets & restarts the simulation
      */
     public void reset() {
         displayHour = 12;
