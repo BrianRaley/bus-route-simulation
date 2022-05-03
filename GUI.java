@@ -15,8 +15,14 @@ public class GUI {
     
     static JButton start, pause, reset;
 
+    static Timelapse t;
+
     public GUI() {
 
+    }
+
+    public static void main(String[] args) {
+        t = new Timelapse();
     }
 
     /**
@@ -71,7 +77,11 @@ public class GUI {
 
         // Initializing buttons
         start = new JButton("Start");
-
+        start.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                t.start();
+            }
+        });
 
         pause = new JButton("Pause");
 
@@ -256,6 +266,7 @@ public class GUI {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+
 
     /**
      * Sets the JLabel timer value to the current simulated time
