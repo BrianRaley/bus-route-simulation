@@ -12,11 +12,10 @@ import java.util.ArrayList;
 public class Train {
     private int ID;     // ID of this bus
     ArrayList<TrainStop> route;
-    private boolean ascending;      // true if first stop is 1
+    private boolean westbound;      // true if first stop is 1
     private int maxCapacity = 56;   // max # of passengers this bus can hold
     private int currentStopIndex; // current stop bus is at
     private int timeToNextStop;     // time in minutes until next stop
-    private boolean isStopped = false;
     private ArrayList<Passenger> passengers;    // passengers on the bus
 
     /** 
@@ -27,7 +26,6 @@ public class Train {
         this.ID = id;
         this.currentStopIndex = currentStopIndex;
         this.route = route;
-        this.ascending = true;
         this.passengers = new ArrayList<Passenger>();
         // this.nextStop = 0;
     }
@@ -76,6 +74,21 @@ public class Train {
         timeToNextStop = time;
     }
 
+    public void changeRoute(ArrayList<TrainStop> route) {
+        this.route = route;
+    }
+
+    public void setWestbound() {
+        if (route.get(0).getStopName().equalsIgnoreCase("Lindenwold")) {
+            westbound = true;
+        }
+        else westbound = false;
+    }
+
+    public boolean getWestbound() {
+        return westbound;
+    }
+
     public void advance() {
         timeToNextStop--;
         if(timeToNextStop == 0) {
@@ -87,27 +100,20 @@ public class Train {
     /**
      * 
      */
-    public void getNextStop() {
-        if(ascending) {
-            currentStopIndex++;
-            if(currentStopIndex == 12) {
-                ascending = false;
-            }
-        }
-        else {
-            currentStopIndex--;
-            if(currentStopIndex == 0) {
-                ascending = true;
-            }
-        }
-    }
-
-    public void setisStopped() {
-        if(isStopped) {
-            isStopped = false;
-        }
-        isStopped = true;
-    }
+    // public void getNextStop() {
+    //     if(ascending) {
+    //         currentStopIndex++;
+    //         if(currentStopIndex == 12) {
+    //             ascending = false;
+    //         }
+    //     }
+    //     else {
+    //         currentStopIndex--;
+    //         if(currentStopIndex == 0) {
+    //             ascending = true;
+    //         }
+    //     }
+    // }
 
     /**
      * Find out which station we are arriving at. Relieve passengers that want to get off here.
