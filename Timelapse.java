@@ -5,10 +5,8 @@ public class Timelapse {
     private int displayHour = 12, displayMinute = 0, minute = 0;
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
-    EastboundRoute eastbound = new EastboundRoute();
     ArrayList<TrainStop> westRoute = westbound.getWestboundRoute();
-    ArrayList<TrainStop> eastRoute = eastbound.getEastboundRoute();
-    Train train1 = new Train(1, 0, westRoute);
+    Train train1 = new Train(1, 10, westRoute, true);
 
     public Timelapse() {
         
@@ -19,8 +17,8 @@ public class Timelapse {
      */
     public void start() {
         gui.initGUI();
-        train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextStop());
-        train1.setWestbound();
+        train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
+        //train1.setWestbound();
         System.out.println(westbound.toString());
         System.out.println(getTimeString());
         System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
@@ -82,6 +80,9 @@ public class Timelapse {
         gui.setTimer(getTimeString());
     }
 
+    /**
+     * 
+     */
     public void populateStops() {
         for(TrainStop stop : westbound.getWestboundRoute()) {
             stop.populateStop();
@@ -130,20 +131,11 @@ public class Timelapse {
         }
     }
 
+    /**
+     * 
+     */
     public void trainOps() {
         train1.advance();
-        if(train1.getTimeToNextStop() == 0) {
-            train1.setTimeToNextStop(train1.route.get(train1.getcurrentStopIndex()).getTimeToNextStop());
-        }
-        updateRoute();
-    }
-
-    public void updateRoute() {
-        if(train1.getcurrentStopIndex() == 12 && train1.getWestbound()) {
-            train1.changeRoute(eastRoute);
-        }
-        else if (train1.getcurrentStopIndex() == 12 && !train1.getWestbound()) {
-            train1.changeRoute(westRoute);
-        }
+                
     }
 }

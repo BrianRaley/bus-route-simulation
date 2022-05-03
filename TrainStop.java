@@ -14,7 +14,8 @@ public class TrainStop {
     private ArrayList<Passenger> waitingPassengers;
     private int lowerBound;
     private int upperBound;
-    private int timeToNextStop;
+    private int timeToNextWestboundStop;
+    private int timeToNextEastboundStop;
 
     /**
      * Creates an instance of a bus stop with a stop #, name, 
@@ -22,12 +23,13 @@ public class TrainStop {
      * @param stopID
      * @param stopName
      */
-    public TrainStop(int stopID, String stopName, int lowerBound, int upperBound, int timeToNextStop) {
+    public TrainStop(int stopID, String stopName, int lowerBound, int upperBound, int timeToNextWestboundStop, int timeToNextEastboundStop) {
         this.stopID = stopID;
         this.stopName = stopName;
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
-        this.timeToNextStop = timeToNextStop;
+        this.timeToNextWestboundStop = timeToNextWestboundStop;
+        this.timeToNextEastboundStop = timeToNextEastboundStop;
         this.waitingPassengers = new ArrayList<Passenger>();
         populateStop();
     }
@@ -48,10 +50,26 @@ public class TrainStop {
         return stopName;
     }
 
-    public int getTimeToNextStop() {
-        return timeToNextStop;
+    /**
+     * Returns the time in minutes to the next westbound stop
+     * @return int timeToNextWestboundStop
+     */
+    public int getTimeToNextWestboundStop() {
+        return timeToNextWestboundStop;
     }
 
+    /**
+     * Returns the time in minutes to the next eastbound stop
+     * @return int timeToNextEastboundStop
+     */
+    public int getTimeToNextEastboundStop() {
+        return timeToNextEastboundStop;
+    }
+
+    /**
+     * Returns the number of passengers currently waiting at this stop
+     * @return int num of waiting passengers at this stop
+     */
     public int getSizeOfWaitingPassengers() {
         return waitingPassengers.size();
     }
@@ -72,6 +90,10 @@ public class TrainStop {
         waitingPassengers.remove(p);
     }
 
+    /**
+     * 
+     * @return
+     */
     public ArrayList<Passenger> getWaitingPassengersQueue(){
         return this.waitingPassengers;
     }
@@ -90,6 +112,9 @@ public class TrainStop {
         //listPassengers();
     }
 
+    /**
+     * 
+     */
     public void listPassengers(){
         System.out.println("              At stop " + (this.stopID-1) + "(" + getStopName() + ")" + " there is...");
         for(Passenger p : waitingPassengers){
@@ -100,6 +125,6 @@ public class TrainStop {
     }
 
     public String toString() {
-        return stopID + " " + timeToNextStop;
+        return stopID + " " + timeToNextWestboundStop + " " + timeToNextEastboundStop; 
     }
 }
