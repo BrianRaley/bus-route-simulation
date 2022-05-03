@@ -6,20 +6,31 @@ public class Timelapse {
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
     ArrayList<TrainStop> westRoute = westbound.getWestboundRoute();
-    Train train1 = new Train(1, 10, westRoute, true);
+
+    // Initialize train 1, starting in Lindenwold and traveling Westbound
+    Train train1 = new Train(1, 0, westRoute, true);
+    // Initialize train 2, starting at 15/16th & Locust and traveling Eastbound
+    Train train2 = new Train(2, 12, westRoute, false);
 
     public Timelapse() {
-        
+        gui.initGUI();
     }
 
     /**
      * Begins the simulation timer
      */
     public void start() {
-        gui.initGUI();
+        
         train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
-        //train1.setWestbound();
-        System.out.println(westbound.toString());
+        train2.setTimeToNextStop(westbound.getWestboundRoute().get(12).getTimeToNextEastboundStop());
+
+        populateStops();
+        train1.interact();
+        train2.interact();
+
+        gui.setTrainACurrentStop("Lindenwold");
+        gui.setTrainBCurrentStop("15/16th & Locust");
+
         System.out.println(getTimeString());
         System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
         System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
@@ -81,7 +92,7 @@ public class Timelapse {
     }
 
     /**
-     * 
+     * Adjusts the GUI values for passengers waiting at each stop
      */
     public void populateStops() {
         for(TrainStop stop : westbound.getWestboundRoute()) {
@@ -132,10 +143,29 @@ public class Timelapse {
     }
 
     /**
-     * 
+     * Train operations to be performed during each interval of simulated time
      */
     public void trainOps() {
         train1.advance();
-                
+        train2.advance();
+
+        gui.setTrainACurrentPassengers(train1.getNumOfPassengers());
+        gui.setTrainBCurrentPassengers(train2.getNumOfPassengers());
+
+        if(train1.getIsStopped()) {
+            train1.interact();
+            gui.setTrainACurrentStop(westRoute.get(train1.getcurrentStopIndex()).getStopName()); 
+        }
+        else {
+            gui.setTrainACurrentStop("In Transit...");
+        }
+
+        if(train2.getIsStopped()) {
+            train2.interact();
+            gui.setTrainBCurrentStop(westRoute.get(train2.getcurrentStopIndex()).getStopName()); 
+        }
+        else {
+            gui.setTrainBCurrentStop("In Transit...");
+        }
     }
 }

@@ -6,8 +6,13 @@ import javax.swing.*;
 public class GUI {
     static JFrame frame;
     static JLabel timerLabel, waiting;
+
     static JLabel stop1, stop2, stop3, stop4, stop5, stop6, stop7, stop8, stop9, stop10, stop11, stop12, stop13;
     static JTextField stop1Total, stop2Total, stop3Total, stop4Total, stop5Total, stop6Total, stop7Total, stop8Total, stop9Total, stop10Total, stop11Total, stop12Total, stop13Total;
+
+    static JLabel trainA, trainB, totalPassengers, currentStop;
+    static JTextField trainATotalPassengers, trainACurrentStopName, trainBTotalPassengers, trainBCurrentStopName;
+    
     static JButton start, pause, reset;
 
     public GUI() {
@@ -36,6 +41,12 @@ public class GUI {
         stop11 = new JLabel("Stop 11: 9/10th & Locust");
         stop12 = new JLabel("Stop 12: 12/13th & Locust");
         stop13 = new JLabel("Stop 13: 15/16th & Locust");
+
+        currentStop = new JLabel("Current Stop");
+        totalPassengers = new JLabel("Total Riders");
+
+        trainA = new JLabel("Train A");
+        trainB = new JLabel("Train B");
     
         // Initializing all text fields
         stop1Total = new JTextField();
@@ -51,6 +62,12 @@ public class GUI {
         stop11Total = new JTextField();
         stop12Total = new JTextField();
         stop13Total = new JTextField();
+
+        trainACurrentStopName = new JTextField();
+        trainATotalPassengers = new JTextField();
+
+        trainBCurrentStopName = new JTextField();
+        trainBTotalPassengers = new JTextField();
 
         // Initializing buttons
         start = new JButton("Start");
@@ -106,6 +123,17 @@ public class GUI {
         panel.add(stop12Total);
         panel.add(stop13Total);
 
+        panel.add(currentStop);
+        panel.add(totalPassengers);
+
+        panel.add(trainA);
+        panel.add(trainACurrentStopName);
+        panel.add(trainATotalPassengers);
+
+        panel.add(trainB);
+        panel.add(trainBCurrentStopName);
+        panel.add(trainBTotalPassengers);
+
         // Setting component positions
         timerLabel.setLocation(10, 10);
         waiting.setLocation(170, 10);
@@ -148,6 +176,17 @@ public class GUI {
 
         stop13.setLocation(10, 270);
         stop13Total.setLocation(170, 270);
+
+        totalPassengers.setLocation(170, 300);
+        currentStop.setLocation(280, 300);
+
+        trainA.setLocation(10, 320);
+        trainATotalPassengers.setLocation(170, 320);
+        trainACurrentStopName.setLocation(280, 320);
+
+        trainB.setLocation(10, 340);
+        trainBTotalPassengers.setLocation(170, 340);
+        trainBCurrentStopName.setLocation(280, 340);
 
         start.setLocation(10, 400);
         pause.setLocation(130, 400);
@@ -195,6 +234,17 @@ public class GUI {
 
         stop13.setSize(150, 16);
         stop13Total.setSize(50, 16);
+
+        totalPassengers.setSize(150, 16);
+        currentStop.setSize(150, 16);
+
+        trainA.setSize(150, 16);
+        trainATotalPassengers.setSize(100, 16);
+        trainACurrentStopName.setSize(150, 16);
+
+        trainB.setSize(150, 16);
+        trainBTotalPassengers.setSize(100, 16);
+        trainBCurrentStopName.setSize(150, 16);
 
         start.setSize(90, 24);
         pause.setSize(90, 24);
@@ -265,5 +315,21 @@ public class GUI {
 
     public void setStop13Total(int total) {
         stop13Total.setText(String.valueOf(total));
+    }
+
+    public void setTrainACurrentPassengers(int total) {
+        trainATotalPassengers.setText(String.valueOf(total));
+    }
+
+    public void setTrainBCurrentPassengers(int total) {
+        trainBTotalPassengers.setText(String.valueOf(total));
+    }
+
+    public void setTrainACurrentStop(String stopName) {
+        trainACurrentStopName.setText(stopName);
+    }
+
+    public void setTrainBCurrentStop(String stopName) {
+        trainBCurrentStopName.setText(stopName);
     }
 }
