@@ -1,5 +1,5 @@
 /**
- * Bus class represents an instance of a public transit bus
+ * Train class represents an instance of a Patco train
  * that will be carrying passengers from stop to stop. 
  * 
  * System Simulation & Modeling - Spring 2022 - Dr Safko
@@ -10,10 +10,11 @@ import java.util.ArrayList;
 // import java.util.Collections;
 
 public class Train {
-    private int ID;     // ID of this bus
-    ArrayList<TrainStop> route;
+    private int ID;     // ID of this train
+    ArrayList<TrainStop> route;     // the route the train is on
     private boolean westbound;      // true if train is traveling westbound
-    private int maxCapacity = 56;   // max # of passengers this bus can hold
+    private boolean isStopped = true;
+    private int maxCapacity = 56;   // max # of passengers this train can hold
     private int currentStopIndex; // current stop bus is at
     private int timeToNextStop;     // time in minutes until next stop
     private ArrayList<Passenger> passengers;    // passengers on the bus
@@ -64,32 +65,41 @@ public class Train {
     }
 
     /**
-     * Get the current # of passengers on the bus
-     * @return int value of # of passengers currently on the bus
+     * 
+     * @return
+     */
+    public boolean getIsStopped() {
+        return isStopped;
+    }
+
+    /**
+     * Get the current # of passengers on the train
+     * @return int value of # of passengers currently on the train
      */
     public int getNumOfPassengers() {
         return passengers.size();
     }
 
+    /**
+     * Returns the time in minutes until the next stop on the route
+     * @return int timeToNextStop
+     */
     public int getTimeToNextStop() {
         return timeToNextStop;
     }
 
+    /**
+     * Sets the time (in minutes) until the next stop
+     * @param time until next stop 
+     */
     public void setTimeToNextStop(int time) {
         timeToNextStop = time;
     }
 
-    public void changeRoute(ArrayList<TrainStop> route) {
-        this.route = route;
-    }
-
-    // public void setWestbound() {
-    //     if (route.get(0).getStopName().equalsIgnoreCase("Lindenwold")) {
-    //         westbound = true;
-    //     }
-    //     else westbound = false;
-    // }
-
+    /**
+     * Returns true if the train is traveling westbound
+     * @return boolean westbound
+     */
     public boolean getWestbound() {
         return westbound;
     }
@@ -99,16 +109,15 @@ public class Train {
      */
     public void advance() {
         timeToNextStop--;
+        isStopped = false;
         if(timeToNextStop == 0 && westbound) {
             currentStopIndex++;
             setTimeToNextStop(this.route.get(getcurrentStopIndex()).getTimeToNextWestboundStop());
-            // if(currentStopIndex >= 12) {
-            //     westbound = false;
-            //     System.out.println("Westbound = " + westbound);
-            // }
+            // Train is stopped
+            isStopped = true;
             System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
         }
-
+        // Train is changing from Westbound to Eastbound
         else if(timeToNextStop <= -1 && westbound) {
             setTimeToNextStop(route.get(getcurrentStopIndex()).getTimeToNextEastboundStop());
             westbound = false;
@@ -120,32 +129,16 @@ public class Train {
             if(currentStopIndex <= 0) {
                 westbound = true;
             }
+            // Train is stopped
+            isStopped = true;
             System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
         }
-
+        // Train is changing from Eastbound to Westbound
         else if(timeToNextStop <= -1 && !westbound) {
             setTimeToNextStop(this.route.get(getcurrentStopIndex()).getTimeToNextWestboundStop());
             westbound = true;
         }
     }
-
-    /**
-     * 
-     */
-    // public void getNextStop() {
-    //     if(ascending) {
-    //         currentStopIndex++;
-    //         if(currentStopIndex == 12) {
-    //             ascending = false;
-    //         }
-    //     }
-    //     else {
-    //         currentStopIndex--;
-    //         if(currentStopIndex == 0) {
-    //             ascending = true;
-    //         }
-    //     }
-    // }
 
     /**
      * Find out which station we are arriving at. Relieve passengers that want to get off here.
@@ -155,16 +148,10 @@ public class Train {
         // System.out.println(currentStation.getStopName());
         relievePassengersFromBus();
         addPassengersFromStop();
-        if(westbound) {
-            setTimeToNextStop(route.get(currentStopIndex).getTimeToNextWestboundStop());
-        }
-        else {
-            setTimeToNextStop(route.get(currentStopIndex).getTimeToNextEastboundStop());
-        }
     }
 
     /**
-     * 
+     * Removes passengers from the train 
      */
     public void relievePassengersFromBus(){
         // System.out.println("passengers let go");
@@ -178,7 +165,7 @@ public class Train {
     }
 
     /**
-     * 
+     * Adds passengers from the current stop to the train
      */
     public void addPassengersFromStop(){
         // System.out.println("passengers added");

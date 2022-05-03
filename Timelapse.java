@@ -6,19 +6,24 @@ public class Timelapse {
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
     ArrayList<TrainStop> westRoute = westbound.getWestboundRoute();
-    Train train1 = new Train(1, 10, westRoute, true);
+
+    // Initialize train 1, starting in Lindenwold and traveling Westbound
+    Train train1 = new Train(1, 0, westRoute, true);
+    // Initialize train 2, starting at 15/16th & Locust and traveling Eastbound
+    Train train2 = new Train(2, 12, westRoute, false);
 
     public Timelapse() {
-        
+        gui.initGUI();
     }
 
     /**
      * Begins the simulation timer
      */
     public void start() {
-        gui.initGUI();
+        
         train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
-        //train1.setWestbound();
+        train2.setTimeToNextStop(westbound.getWestboundRoute().get(12).getTimeToNextEastboundStop());
+
         System.out.println(westbound.toString());
         System.out.println(getTimeString());
         System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
@@ -136,6 +141,12 @@ public class Timelapse {
      */
     public void trainOps() {
         train1.advance();
-                
+        gui.setTrainACurrentPassengers(train1.getNumOfPassengers());
+        if(train1.getIsStopped()) {
+            gui.setTrainACurrentStop(westRoute.get(train1.getcurrentStopIndex()).getStopName()); 
+        }
+        else {
+            gui.setTrainACurrentStop("In Transit...");
+        }
     }
 }
