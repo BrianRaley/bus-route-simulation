@@ -65,6 +65,14 @@ public class Train {
     }
 
     /**
+     * Sets the current stop index
+     * @param index
+     */
+    public void setCurrentStopIndex(int index) {
+        currentStopIndex = index;
+    }
+
+    /**
      * 
      * @return
      */
@@ -105,6 +113,13 @@ public class Train {
     }
 
     /**
+     * Removes all passengers from the train
+     */
+    public void clearTrain() {
+        passengers.clear();
+    }
+
+    /**
      * Advances the train by 1 minute of simulated time
      */
     public void advance() {
@@ -115,7 +130,7 @@ public class Train {
             setTimeToNextStop(this.route.get(getcurrentStopIndex()).getTimeToNextWestboundStop());
             // Train is stopped
             isStopped = true;
-            System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
+            //System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
         }
         // Train is changing from Westbound to Eastbound
         else if(timeToNextStop <= -1 && westbound) {
@@ -131,7 +146,7 @@ public class Train {
             }
             // Train is stopped
             isStopped = true;
-            System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
+            //System.out.println("Stopping at: " + route.get(currentStopIndex).getStopName());
         }
         // Train is changing from Eastbound to Westbound
         else if(timeToNextStop <= -1 && !westbound) {
@@ -156,7 +171,7 @@ public class Train {
         for(int i=0; i<passengers.size(); i++){
             Passenger p = passengers.get(i);
             if(p.getDestination() == currentStopIndex){
-                System.out.println("Removed: " + p);
+                //System.out.println("Removed: " + p);
                 passengers.remove(p);
             }
         }
@@ -171,7 +186,7 @@ public class Train {
         while(passengers.size() < this.maxCapacity &&
               currentStation.getWaitingPassengersQueue().isEmpty() != true){
             Passenger p = currentStation.getWaitingPassengersQueue().remove(0);
-            System.out.println("Added: " + p);
+            //System.out.println("Added: " + p);
             if((p.getDirection() && getWestbound()) ||
                 !p.getDirection() && !getWestbound()) {
                     this.passengers.add(p);

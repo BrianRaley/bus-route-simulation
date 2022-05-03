@@ -126,6 +126,13 @@ public class TrainStop {
         }
     }
 
+    /**
+     * Removes all waiting passengers from a stop
+     */
+    public void clearStop() {
+        waitingPassengers.clear();
+    }
+
     public String toString() {
         return stopID + " " + timeToNextWestboundStop + " " + timeToNextEastboundStop; 
     }

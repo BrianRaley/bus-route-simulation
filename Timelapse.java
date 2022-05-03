@@ -12,6 +12,18 @@ public class Timelapse {
     // Initialize train 2, starting at 15/16th & Locust and traveling Eastbound
     Train train2 = new Train(2, 12, westRoute, false);
 
+    Timer timer = new Timer();
+    TimerTask task = new TimerTask() {
+        public void run() {
+            populateStops();
+            trainOps();
+            incrementTimer();  
+            //System.out.println(getTimeString());
+            //System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());       
+            //System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
+            }
+    };
+
     public Timelapse() {
         gui.initGUI();
     }
@@ -20,7 +32,6 @@ public class Timelapse {
      * Begins the simulation timer
      */
     public void start() {
-        
         train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
         train2.setTimeToNextStop(westbound.getWestboundRoute().get(12).getTimeToNextEastboundStop());
 
@@ -28,26 +39,13 @@ public class Timelapse {
         train1.interact();
         train2.interact();
 
-        gui.setTrainACurrentStop("Lindenwold");
-        gui.setTrainBCurrentStop("15/16th & Locust");
+        gui.setTrainACurrentStop(westRoute.get(train1.getcurrentStopIndex()).getStopName());
+        gui.setTrainBCurrentStop(westRoute.get(train2.getcurrentStopIndex()).getStopName());
 
-        System.out.println(getTimeString());
-        System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
-        System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
-        
+        //System.out.println(getTimeString());
+        //System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());
+        //System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
 
-        Timer timer = new Timer();
-            TimerTask task = new TimerTask() {
-                public void run() {
-                    populateStops();
-                    trainOps();
-                    incrementTimer();  
-                    System.out.println(getTimeString());
-                    System.out.println("Train 1 current stop: " + train1.getcurrentStopIndex());       
-                    System.out.println("Time to next stop: " + train1.getTimeToNextStop() + "\n");
-            }
-        };
-    
         timer.scheduleAtFixedRate(task, 500, 2000);
     }
 
@@ -167,5 +165,50 @@ public class Timelapse {
         else {
             gui.setTrainBCurrentStop("In Transit...");
         }
+    }
+
+    /**
+     * Stops the simulation
+     */
+    public void stopSimulation() {
+        task.cancel();
+        timer.cancel();
+    }
+
+    /**
+     * Resumes the simulation from a stopped state
+     */
+    public void resumeSimulation() {
+        timer = new Timer();
+        task = new TimerTask() {
+            public void run() {
+                populateStops();
+                trainOps();
+                incrementTimer(); 
+            }
+        };
+        timer.scheduleAtFixedRate(task, 500, 2000);
+    }
+
+    /**
+     * Resets the simulation to default
+     */
+    public void reset() {
+        displayHour = 12;
+        displayMinute = 0;
+
+        train1.clearTrain();
+        train1.setCurrentStopIndex(0);
+
+        train2.clearTrain();
+        train2.setCurrentStopIndex(12);
+
+        for(int i = 0; i < westRoute.size(); i++) {
+            westRoute.get(i).clearStop();
+        }
+
+        populateStops();
+
+        resumeSimulation();
     }
 }
