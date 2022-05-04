@@ -1,8 +1,17 @@
+/**
+ * This class maintains the simulation by using a Timer with TimerTasks.
+ * Each interval simulates the passing of one minute as a train travels 
+ * along a set route.
+ * 
+ * System Simulation & Modeling - Spring 2022 - Dr Safko
+ * Team 6: Brian Raley, Emerson Henkel, Doug White
+ */
+
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.ArrayList;
 public class Timelapse {
-    private int displayHour = 12, displayMinute = 0, minute = 0;
+    private int displayHour = 12, displayMinute = 0;
     GUI gui = new GUI();
     WestboundRoute westbound = new WestboundRoute();
     ArrayList<TrainStop> westRoute = westbound.getWestboundRoute();
@@ -24,12 +33,15 @@ public class Timelapse {
             }
     };
 
+    /**
+     * Constructor - initializes the GUI
+     */
     public Timelapse() {
         gui.initGUI();
     }
 
     /**
-     * Begins the simulation timer
+     * Begins the simulation
      */
     public void start() {
         train1.setTimeToNextStop(westbound.getWestboundRoute().get(0).getTimeToNextWestboundStop());
@@ -61,19 +73,10 @@ public class Timelapse {
     }
 
     /**
-     * Returns the value of the internal timer
-     * @return int minute
-     */
-    public int getTime() {
-        return minute;
-    }
-
-    /**
      * Increments timer and display time by one minute
      */
     public void incrementTimer() {
         if(displayMinute == 59) {
-            minute++;
             displayMinute = 0;
             displayHour++;
             if(displayHour >= 12) {
@@ -82,7 +85,6 @@ public class Timelapse {
             //System.out.println(hour + ":0" + minute);
         }
         else {
-            minute++;
             displayMinute++;
             //System.out.println(hour + ":" + minute);
         }
@@ -99,42 +101,55 @@ public class Timelapse {
             switch(stopNum) {
                 case 1:
                     gui.setStop1Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop1Boards(stop.getTotalBoards());
                     break;
                 case 2:
                     gui.setStop2Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop2Boards(stop.getTotalBoards());
                     break;
                 case 3:
                     gui.setStop3Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop3Boards(stop.getTotalBoards());
                     break;
                 case 4:
                     gui.setStop4Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop4Boards(stop.getTotalBoards());
                     break;
                 case 5:
                     gui.setStop5Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop5Boards(stop.getTotalBoards());
                     break;
                 case 6:
                     gui.setStop6Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop6Boards(stop.getTotalBoards());
                     break;
                 case 7:
                     gui.setStop7Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop7Boards(stop.getTotalBoards());
                     break;
                 case 8:
                     gui.setStop8Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop8Boards(stop.getTotalBoards());
                     break;
                 case 9:
                     gui.setStop9Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop9Boards(stop.getTotalBoards());
                     break;
                 case 10:
                     gui.setStop10Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop10Boards(stop.getTotalBoards());
                     break;
                 case 11:
                     gui.setStop11Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop11Boards(stop.getTotalBoards());
                     break;
                 case 12:
                     gui.setStop12Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop12Boards(stop.getTotalBoards());
                     break;
                 case 13:
                     gui.setStop13Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop13Boards(stop.getTotalBoards());
                     break;
             }
         }
@@ -149,6 +164,8 @@ public class Timelapse {
 
         gui.setTrainACurrentPassengers(train1.getNumOfPassengers());
         gui.setTrainBCurrentPassengers(train2.getNumOfPassengers());
+
+        gui.setTotalCompleted(train1.getPassengersServed() + train2.getPassengersServed());
 
         if(train1.getIsStopped()) {
             train1.interact();
@@ -191,7 +208,7 @@ public class Timelapse {
     }
 
     /**
-     * Resets the simulation to default
+     * Resets & restarts the simulation
      */
     public void reset() {
         displayHour = 12;
