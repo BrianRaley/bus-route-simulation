@@ -49,7 +49,9 @@ public class GUI {
     public static void main(String[] args) throws IOException{
         t = new Timelapse();
         //Instantiating the File class
-        File file = new File("C:\\Users\\Beep Beep\\Desktop\\trainstest3.txt");
+        File dir = new File("output");
+        dir.mkdirs();
+        File file = new File(dir, "PatcoSim" + System.currentTimeMillis() + ".txt");
         //Instantiating the PrintStream class
         PrintStream writeToFile = new PrintStream(file);
         System.setOut(writeToFile);
