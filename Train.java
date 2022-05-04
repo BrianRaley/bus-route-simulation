@@ -18,6 +18,7 @@ public class Train {
     private int currentStopIndex; // current stop bus is at
     private int timeToNextStop;     // time in minutes until next stop
     private ArrayList<Passenger> passengers;    // passengers on the bus
+    private int passengersServed = 0;
 
     /** 
      * Creates an instance of a bus with an ID
@@ -113,6 +114,14 @@ public class Train {
     }
 
     /**
+     * Returns the number of passengers that have completed their ride
+     * @return int passengersServed
+     */
+    public int getPassengersServed() {
+        return passengersServed;
+    }
+
+    /**
      * Removes all passengers from the train
      */
     public void clearTrain() {
@@ -173,6 +182,7 @@ public class Train {
             if(p.getDestination() == currentStopIndex){
                 //System.out.println("Removed: " + p);
                 passengers.remove(p);
+                passengersServed++;
             }
         }
     }
@@ -185,7 +195,7 @@ public class Train {
         TrainStop currentStation = route.get(currentStopIndex);
         while(passengers.size() < this.maxCapacity &&
               currentStation.getWaitingPassengersQueue().isEmpty() != true){
-            Passenger p = currentStation.getWaitingPassengersQueue().remove(0);
+            Passenger p = currentStation.removeWaitingPassenger(0);
             //System.out.println("Added: " + p);
             if((p.getDirection() && getWestbound()) ||
                 !p.getDirection() && !getWestbound()) {

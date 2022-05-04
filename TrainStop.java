@@ -16,6 +16,7 @@ public class TrainStop {
     private int upperBound;
     private int timeToNextWestboundStop;
     private int timeToNextEastboundStop;
+    private int totalBoards;
 
     /**
      * Creates an instance of a train stop with a stop #, name, 
@@ -74,6 +75,14 @@ public class TrainStop {
     }
 
     /**
+     * Returns the total number of passengers that boarded at this stop
+     * @return
+     */
+    public int getTotalBoards() {
+        return totalBoards;
+    }
+
+    /**
      * Adds a Passenger to the wait list
      * @param Passenger p to be added to the wait queue
      */
@@ -85,8 +94,9 @@ public class TrainStop {
      * Removes a Passenger from the wait list
      * @param Passenger p to be removed from the wait list
      */
-    public void removeWaitingPassenger(Passenger p) {
-        waitingPassengers.remove(p);
+    public Passenger removeWaitingPassenger(int index) {
+        totalBoards++;
+        return waitingPassengers.remove(index);
     }
 
     /**

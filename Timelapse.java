@@ -101,42 +101,55 @@ public class Timelapse {
             switch(stopNum) {
                 case 1:
                     gui.setStop1Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop1Boards(stop.getTotalBoards());
                     break;
                 case 2:
                     gui.setStop2Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop2Boards(stop.getTotalBoards());
                     break;
                 case 3:
                     gui.setStop3Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop3Boards(stop.getTotalBoards());
                     break;
                 case 4:
                     gui.setStop4Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop4Boards(stop.getTotalBoards());
                     break;
                 case 5:
                     gui.setStop5Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop5Boards(stop.getTotalBoards());
                     break;
                 case 6:
                     gui.setStop6Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop6Boards(stop.getTotalBoards());
                     break;
                 case 7:
                     gui.setStop7Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop7Boards(stop.getTotalBoards());
                     break;
                 case 8:
                     gui.setStop8Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop8Boards(stop.getTotalBoards());
                     break;
                 case 9:
                     gui.setStop9Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop9Boards(stop.getTotalBoards());
                     break;
                 case 10:
                     gui.setStop10Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop10Boards(stop.getTotalBoards());
                     break;
                 case 11:
                     gui.setStop11Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop11Boards(stop.getTotalBoards());
                     break;
                 case 12:
                     gui.setStop12Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop12Boards(stop.getTotalBoards());
                     break;
                 case 13:
                     gui.setStop13Total(stop.getSizeOfWaitingPassengers());
+                    gui.setStop13Boards(stop.getTotalBoards());
                     break;
             }
         }
@@ -151,6 +164,8 @@ public class Timelapse {
 
         gui.setTrainACurrentPassengers(train1.getNumOfPassengers());
         gui.setTrainBCurrentPassengers(train2.getNumOfPassengers());
+
+        gui.setTotalCompleted(train1.getPassengersServed() + train2.getPassengersServed());
 
         if(train1.getIsStopped()) {
             train1.interact();
