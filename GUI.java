@@ -10,6 +10,10 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintStream;
+
 public class GUI {
     static JFrame frame;
     static JLabel timerLabel, waiting, totalBoards;
@@ -28,6 +32,9 @@ public class GUI {
 
     static Timelapse t;
 
+    String timeText, stop1Text, stop2Text, stop3Text, stop4Text, stop5Text, stop6Text, stop7Text, stop8Text, stop9Text, stop10Text, stop11Text, stop12Text, stop13Text;
+    String boardt1, boardt2, boardt3, boardt4, boardt5, boardt6, boardt7, boardt8, boardt9, boardt10, boardt11, boardt12, boardt13; 
+    String aTotalText, bTotalText, aStopText, bStopText, completedText;
     /**
      * Constructor
      */
@@ -39,8 +46,13 @@ public class GUI {
      * Main method - Initializes GUI and prepares for simulation
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         t = new Timelapse();
+        //Instantiating the File class
+        File file = new File("C:\\Users\\Beep Beep\\Desktop\\trainstest3.txt");
+        //Instantiating the PrintStream class
+        PrintStream writeToFile = new PrintStream(file);
+        System.setOut(writeToFile);
     }
 
     /**
@@ -399,129 +411,184 @@ public class GUI {
      */
     public void setTimer(String time) {
         timerLabel.setText("Current time: " + time);
+        timeText = "Current time: " + time; 
     }
 
     public void setStop1Total(int total) {
         stop1Total.setText(String.valueOf(total));
+        stop1Text =Integer.toString(total);
     }
 
     public void setStop2Total(int total) {
         stop2Total.setText(String.valueOf(total));
+        stop2Text =Integer.toString(total);
     }
 
     public void setStop3Total(int total) {
         stop3Total.setText(String.valueOf(total));
+        stop3Text =Integer.toString(total);;
     }
 
     public void setStop4Total(int total) {
         stop4Total.setText(String.valueOf(total));
+        stop4Text =Integer.toString(total);
     }
 
     public void setStop5Total(int total) {
         stop5Total.setText(String.valueOf(total));
+        stop5Text =Integer.toString(total);
     }
 
     public void setStop6Total(int total) {
         stop6Total.setText(String.valueOf(total));
+        stop6Text =Integer.toString(total);
     }
 
     public void setStop7Total(int total) {
         stop7Total.setText(String.valueOf(total));
+        stop7Text =Integer.toString(total);
     }
 
     public void setStop8Total(int total) {
         stop8Total.setText(String.valueOf(total));
+        stop8Text =Integer.toString(total);
     }
 
     public void setStop9Total(int total) {
         stop9Total.setText(String.valueOf(total));
+        stop9Text =Integer.toString(total);
     }
 
     public void setStop10Total(int total) {
         stop10Total.setText(String.valueOf(total));
+        stop10Text =Integer.toString(total);
     }
 
     public void setStop11Total(int total) {
         stop11Total.setText(String.valueOf(total));
+        stop11Text =Integer.toString(total);
     }
 
     public void setStop12Total(int total) {
         stop12Total.setText(String.valueOf(total));
+        stop12Text =Integer.toString(total);
     }
 
     public void setStop13Total(int total) {
         stop13Total.setText(String.valueOf(total));
+        stop13Text = Integer.toString(total);
     }
 
     public void setStop1Boards(int total) {
         stop1Boards.setText(String.valueOf(total));
+        boardt1 = Integer.toString(total);
     }
 
     public void setStop2Boards(int total) {
         stop2Boards.setText(String.valueOf(total));
+        boardt2 = Integer.toString(total);
     }
 
     public void setStop3Boards(int total) {
         stop3Boards.setText(String.valueOf(total));
+        boardt3 = Integer.toString(total);
     }
 
     public void setStop4Boards(int total) {
         stop4Boards.setText(String.valueOf(total));
+        boardt4 = Integer.toString(total);
     }
 
     public void setStop5Boards(int total) {
         stop5Boards.setText(String.valueOf(total));
+        boardt5 = Integer.toString(total);
     }
 
     public void setStop6Boards(int total) {
         stop6Boards.setText(String.valueOf(total));
+        boardt6 = Integer.toString(total);
     }
 
     public void setStop7Boards(int total) {
         stop7Boards.setText(String.valueOf(total));
+        boardt7 = Integer.toString(total);
     }
 
     public void setStop8Boards(int total) {
         stop8Boards.setText(String.valueOf(total));
+        boardt8 = Integer.toString(total);
     }
 
     public void setStop9Boards(int total) {
         stop9Boards.setText(String.valueOf(total));
+        boardt9 = Integer.toString(total);
     }
 
     public void setStop10Boards(int total) {
         stop10Boards.setText(String.valueOf(total));
+        boardt10 = Integer.toString(total);
     }
 
     public void setStop11Boards(int total) {
         stop11Boards.setText(String.valueOf(total));
+        boardt11 = Integer.toString(total);
     }
 
     public void setStop12Boards(int total) {
         stop12Boards.setText(String.valueOf(total));
+        boardt12 = Integer.toString(total);
     }
 
     public void setStop13Boards(int total) {
         stop13Boards.setText(String.valueOf(total));
+        boardt13 = Integer.toString(total);
     }
 
     public void setTrainACurrentPassengers(int total) {
         trainATotalPassengers.setText(String.valueOf(total));
+        aTotalText = Integer.toString(total);
     }
 
     public void setTrainBCurrentPassengers(int total) {
         trainBTotalPassengers.setText(String.valueOf(total));
+        bTotalText = Integer.toString(total);
     }
 
     public void setTrainACurrentStop(String stopName) {
         trainACurrentStopName.setText(stopName);
+        aStopText = stopName;
     }
 
     public void setTrainBCurrentStop(String stopName) {
         trainBCurrentStopName.setText(stopName);
+        bStopText = stopName;
     }
 
     public void setTotalCompleted(int total) {
         totalCompleted.setText(String.valueOf(total));
+        completedText = Integer.toString(total);
+    }
+
+    public String abomination(){
+        String abomination =
+            "\n" + timeText + "\n" +
+            "Lindenwold waiting: " + stop1Text + " total : "  + boardt1 + "\n" +
+            "Ashland waiting: " + stop2Text + " total : "  + boardt2 + "\n" +
+            "Woodcrest waiting: " + stop3Text + " total : "  + boardt3 + "\n" +
+            "Haddonfield waiting: " + stop4Text + " total : "  + boardt4 + "\n" +
+            "Westmont waiting: " + stop5Text + " total : "  + boardt5 + "\n" +
+            "Collingswood waiting: " + stop6Text + " total : "  + boardt6 + "\n" +
+            "Ferry Avenue waiting: " + stop7Text + " total : "  + boardt7 + "\n" +
+            "Broadway waiting: " + stop8Text + " total : "  + boardt8 + "\n" +
+            "City Hall waiting: " + stop9Text + " total : "  + boardt9 + "\n" +
+            "8th & Market St. waiting: " + stop10Text + " total : "  + boardt10 + "\n" +
+            "9/10th & Locust St. waiting: " + stop11Text + " total : "  + boardt11 + "\n" +
+            "12/13th & Locust St. waiting: " + stop12Text + " total : "  + boardt12 + "\n" +
+            "15/16th & Locust St. waiting: " + stop13Text + " total : "  + boardt13 + "\n" +
+            "Train A: Total Riders: " + aTotalText + " Current Stop : " + aStopText + "\n" +
+            "Train B: Total Riders: " + bTotalText + " Current Stop : " + bStopText + "\n" +
+            "Total Rides Complete: " + completedText + "\n"
+            ;
+        return abomination;
     }
 }

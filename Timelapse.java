@@ -25,6 +25,7 @@ public class Timelapse {
     TimerTask task = new TimerTask() {
         public void run() {
             populateStops();
+            textFileOutput();
             trainOps();
             incrementTimer();  
             //System.out.println(getTimeString());
@@ -200,6 +201,7 @@ public class Timelapse {
         task = new TimerTask() {
             public void run() {
                 populateStops();
+                textFileOutput();
                 trainOps();
                 incrementTimer(); 
             }
@@ -227,5 +229,9 @@ public class Timelapse {
         populateStops();
 
         resumeSimulation();
+    }
+
+    public void textFileOutput(){
+        System.out.print(gui.abomination());
     }
 }
