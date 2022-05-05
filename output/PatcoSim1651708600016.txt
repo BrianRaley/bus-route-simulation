@@ -1,0 +1,576 @@
+
+null
+Lindenwold waiting: 0 total : 0
+Ashland waiting: 5 total : 0
+Woodcrest waiting: 7 total : 0
+Haddonfield waiting: 4 total : 0
+Westmont waiting: 5 total : 0
+Collingswood waiting: 2 total : 0
+Ferry Avenue waiting: 0 total : 0
+Broadway waiting: 10 total : 0
+City Hall waiting: 5 total : 0
+8th & Market St. waiting: 24 total : 0
+9/10th & Locust St. waiting: 4 total : 0
+12/13th & Locust St. waiting: 3 total : 0
+15/16th & Locust St. waiting: 16 total : 11
+Train A: Total Riders: null Current Stop : Lindenwold
+Train B: Total Riders: null Current Stop : 15/16th & Locust St.
+Total Rides Complete: null
+
+Current time: 12:01
+Lindenwold waiting: 7 total : 0
+Ashland waiting: 7 total : 0
+Woodcrest waiting: 11 total : 0
+Haddonfield waiting: 7 total : 0
+Westmont waiting: 7 total : 0
+Collingswood waiting: 4 total : 0
+Ferry Avenue waiting: 0 total : 0
+Broadway waiting: 11 total : 0
+City Hall waiting: 8 total : 0
+8th & Market St. waiting: 35 total : 0
+9/10th & Locust St. waiting: 4 total : 0
+12/13th & Locust St. waiting: 0 total : 3
+15/16th & Locust St. waiting: 25 total : 11
+Train A: Total Riders: 0 Current Stop : In Transit...
+Train B: Total Riders: 11 Current Stop : 12/13th & Locust St.
+Total Rides Complete: 0
+
+Current time: 12:02
+Lindenwold waiting: 13 total : 0
+Ashland waiting: 1 total : 7
+Woodcrest waiting: 11 total : 0
+Haddonfield waiting: 10 total : 0
+Westmont waiting: 7 total : 0
+Collingswood waiting: 4 total : 0
+Ferry Avenue waiting: 1 total : 0
+Broadway waiting: 15 total : 0
+City Hall waiting: 9 total : 0
+8th & Market St. waiting: 48 total : 0
+9/10th & Locust St. waiting: 2 total : 4
+12/13th & Locust St. waiting: 2 total : 3
+15/16th & Locust St. waiting: 33 total : 11
+Train A: Total Riders: 0 Current Stop : Ashland
+Train B: Total Riders: 14 Current Stop : 9/10th & Locust St.
+Total Rides Complete: 0
+
+Current time: 12:03
+Lindenwold waiting: 14 total : 0
+Ashland waiting: 1 total : 7
+Woodcrest waiting: 3 total : 11
+Haddonfield waiting: 11 total : 0
+Westmont waiting: 7 total : 0
+Collingswood waiting: 5 total : 0
+Ferry Avenue waiting: 1 total : 0
+Broadway waiting: 19 total : 0
+City Hall waiting: 12 total : 0
+8th & Market St. waiting: 53 total : 0
+9/10th & Locust St. waiting: 3 total : 4
+12/13th & Locust St. waiting: 6 total : 3
+15/16th & Locust St. waiting: 43 total : 11
+Train A: Total Riders: 4 Current Stop : Woodcrest
+Train B: Total Riders: 16 Current Stop : In Transit...
+Total Rides Complete: 2
+
+Current time: 12:04
+Lindenwold waiting: 21 total : 0
+Ashland waiting: 2 total : 7
+Woodcrest waiting: 6 total : 11
+Haddonfield waiting: 12 total : 0
+Westmont waiting: 10 total : 0
+Collingswood waiting: 5 total : 0
+Ferry Avenue waiting: 5 total : 0
+Broadway waiting: 20 total : 0
+City Hall waiting: 13 total : 0
+8th & Market St. waiting: 0 total : 53
+9/10th & Locust St. waiting: 5 total : 4
+12/13th & Locust St. waiting: 10 total : 3
+15/16th & Locust St. waiting: 64 total : 11
+Train A: Total Riders: 11 Current Stop : In Transit...
+Train B: Total Riders: 16 Current Stop : 8th & Market St.
+Total Rides Complete: 2
+
+Current time: 12:05
+Lindenwold waiting: 27 total : 0
+Ashland waiting: 5 total : 7
+Woodcrest waiting: 10 total : 11
+Haddonfield waiting: 12 total : 0
+Westmont waiting: 13 total : 0
+Collingswood waiting: 7 total : 0
+Ferry Avenue waiting: 7 total : 0
+Broadway waiting: 21 total : 0
+City Hall waiting: 13 total : 0
+8th & Market St. waiting: 2 total : 53
+9/10th & Locust St. waiting: 6 total : 4
+12/13th & Locust St. waiting: 11 total : 3
+15/16th & Locust St. waiting: 73 total : 11
+Train A: Total Riders: 11 Current Stop : In Transit...
+Train B: Total Riders: 55 Current Stop : In Transit...
+Total Rides Complete: 4
+
+Current time: 12:06
+Lindenwold waiting: 34 total : 0
+Ashland waiting: 5 total : 7
+Woodcrest waiting: 13 total : 11
+Haddonfield waiting: 3 total : 12
+Westmont waiting: 14 total : 0
+Collingswood waiting: 8 total : 0
+Ferry Avenue waiting: 9 total : 0
+Broadway waiting: 28 total : 0
+City Hall waiting: 13 total : 0
+8th & Market St. waiting: 16 total : 53
+9/10th & Locust St. waiting: 8 total : 4
+12/13th & Locust St. waiting: 14 total : 3
+15/16th & Locust St. waiting: 73 total : 11
+Train A: Total Riders: 11 Current Stop : Haddonfield
+Train B: Total Riders: 55 Current Stop : In Transit...
+Total Rides Complete: 4
+
+Current time: 12:07
+Lindenwold waiting: 37 total : 0
+Ashland waiting: 6 total : 7
+Woodcrest waiting: 15 total : 11
+Haddonfield waiting: 4 total : 12
+Westmont waiting: 14 total : 0
+Collingswood waiting: 9 total : 0
+Ferry Avenue waiting: 13 total : 0
+Broadway waiting: 29 total : 0
+City Hall waiting: 13 total : 0
+8th & Market St. waiting: 18 total : 53
+9/10th & Locust St. waiting: 10 total : 4
+12/13th & Locust St. waiting: 16 total : 3
+15/16th & Locust St. waiting: 89 total : 11
+Train A: Total Riders: 19 Current Stop : In Transit...
+Train B: Total Riders: 55 Current Stop : In Transit...
+Total Rides Complete: 4
+
+Current time: 12:08
+Lindenwold waiting: 44 total : 0
+Ashland waiting: 6 total : 7
+Woodcrest waiting: 20 total : 11
+Haddonfield waiting: 5 total : 12
+Westmont waiting: 0 total : 14
+Collingswood waiting: 11 total : 0
+Ferry Avenue waiting: 16 total : 0
+Broadway waiting: 37 total : 0
+City Hall waiting: 13 total : 0
+8th & Market St. waiting: 29 total : 53
+9/10th & Locust St. waiting: 10 total : 4
+12/13th & Locust St. waiting: 16 total : 3
+15/16th & Locust St. waiting: 89 total : 11
+Train A: Total Riders: 19 Current Stop : Westmont
+Train B: Total Riders: 55 Current Stop : In Transit...
+Total Rides Complete: 4
+
+Current time: 12:09
+Lindenwold waiting: 45 total : 0
+Ashland waiting: 7 total : 7
+Woodcrest waiting: 21 total : 11
+Haddonfield waiting: 8 total : 12
+Westmont waiting: 3 total : 14
+Collingswood waiting: 12 total : 0
+Ferry Avenue waiting: 18 total : 0
+Broadway waiting: 45 total : 0
+City Hall waiting: 1 total : 13
+8th & Market St. waiting: 31 total : 53
+9/10th & Locust St. waiting: 12 total : 4
+12/13th & Locust St. waiting: 20 total : 3
+15/16th & Locust St. waiting: 98 total : 11
+Train A: Total Riders: 24 Current Stop : In Transit...
+Train B: Total Riders: 55 Current Stop : City Hall
+Total Rides Complete: 6
+
+Current time: 12:10
+Lindenwold waiting: 47 total : 0
+Ashland waiting: 10 total : 7
+Woodcrest waiting: 21 total : 11
+Haddonfield waiting: 9 total : 12
+Westmont waiting: 5 total : 14
+Collingswood waiting: 2 total : 12
+Ferry Avenue waiting: 18 total : 0
+Broadway waiting: 5 total : 45
+City Hall waiting: 1 total : 13
+8th & Market St. waiting: 32 total : 53
+9/10th & Locust St. waiting: 14 total : 4
+12/13th & Locust St. waiting: 22 total : 3
+15/16th & Locust St. waiting: 117 total : 11
+Train A: Total Riders: 24 Current Stop : Collingswood
+Train B: Total Riders: 63 Current Stop : Broadway
+Total Rides Complete: 8
+
+Current time: 12:11
+Lindenwold waiting: 52 total : 0
+Ashland waiting: 11 total : 7
+Woodcrest waiting: 21 total : 11
+Haddonfield waiting: 12 total : 12
+Westmont waiting: 8 total : 14
+Collingswood waiting: 4 total : 12
+Ferry Avenue waiting: 22 total : 0
+Broadway waiting: 5 total : 45
+City Hall waiting: 1 total : 13
+8th & Market St. waiting: 32 total : 53
+9/10th & Locust St. waiting: 15 total : 4
+12/13th & Locust St. waiting: 25 total : 3
+15/16th & Locust St. waiting: 118 total : 11
+Train A: Total Riders: 31 Current Stop : In Transit...
+Train B: Total Riders: 87 Current Stop : In Transit...
+Total Rides Complete: 18
+
+Current time: 12:12
+Lindenwold waiting: 55 total : 0
+Ashland waiting: 14 total : 7
+Woodcrest waiting: 24 total : 11
+Haddonfield waiting: 14 total : 12
+Westmont waiting: 10 total : 14
+Collingswood waiting: 5 total : 12
+Ferry Avenue waiting: 3 total : 22
+Broadway waiting: 7 total : 45
+City Hall waiting: 4 total : 13
+8th & Market St. waiting: 46 total : 53
+9/10th & Locust St. waiting: 15 total : 4
+12/13th & Locust St. waiting: 25 total : 3
+15/16th & Locust St. waiting: 132 total : 11
+Train A: Total Riders: 31 Current Stop : Ferry Avenue
+Train B: Total Riders: 87 Current Stop : In Transit...
+Total Rides Complete: 18
+
+Current time: 12:13
+Lindenwold waiting: 59 total : 0
+Ashland waiting: 16 total : 7
+Woodcrest waiting: 28 total : 11
+Haddonfield waiting: 17 total : 12
+Westmont waiting: 12 total : 14
+Collingswood waiting: 6 total : 12
+Ferry Avenue waiting: 4 total : 25
+Broadway waiting: 16 total : 45
+City Hall waiting: 7 total : 13
+8th & Market St. waiting: 48 total : 53
+9/10th & Locust St. waiting: 17 total : 4
+12/13th & Locust St. waiting: 27 total : 3
+15/16th & Locust St. waiting: 137 total : 11
+Train A: Total Riders: 39 Current Stop : In Transit...
+Train B: Total Riders: 87 Current Stop : Ferry Avenue
+Total Rides Complete: 21
+
+Current time: 12:14
+Lindenwold waiting: 60 total : 0
+Ashland waiting: 17 total : 7
+Woodcrest waiting: 30 total : 11
+Haddonfield waiting: 19 total : 12
+Westmont waiting: 15 total : 14
+Collingswood waiting: 6 total : 12
+Ferry Avenue waiting: 6 total : 25
+Broadway waiting: 20 total : 45
+City Hall waiting: 8 total : 13
+8th & Market St. waiting: 61 total : 53
+9/10th & Locust St. waiting: 20 total : 4
+12/13th & Locust St. waiting: 30 total : 3
+15/16th & Locust St. waiting: 141 total : 11
+Train A: Total Riders: 39 Current Stop : In Transit...
+Train B: Total Riders: 76 Current Stop : In Transit...
+Total Rides Complete: 33
+
+Current time: 12:15
+Lindenwold waiting: 63 total : 0
+Ashland waiting: 18 total : 7
+Woodcrest waiting: 33 total : 11
+Haddonfield waiting: 21 total : 12
+Westmont waiting: 18 total : 14
+Collingswood waiting: 1 total : 18
+Ferry Avenue waiting: 7 total : 25
+Broadway waiting: 21 total : 45
+City Hall waiting: 11 total : 13
+8th & Market St. waiting: 63 total : 53
+9/10th & Locust St. waiting: 22 total : 4
+12/13th & Locust St. waiting: 34 total : 3
+15/16th & Locust St. waiting: 149 total : 11
+Train A: Total Riders: 39 Current Stop : In Transit...
+Train B: Total Riders: 76 Current Stop : Collingswood
+Total Rides Complete: 33
+
+Current time: 12:16
+Lindenwold waiting: 66 total : 0
+Ashland waiting: 19 total : 7
+Woodcrest waiting: 36 total : 11
+Haddonfield waiting: 24 total : 12
+Westmont waiting: 20 total : 14
+Collingswood waiting: 3 total : 18
+Ferry Avenue waiting: 8 total : 25
+Broadway waiting: 6 total : 66
+City Hall waiting: 14 total : 13
+8th & Market St. waiting: 76 total : 53
+9/10th & Locust St. waiting: 25 total : 4
+12/13th & Locust St. waiting: 35 total : 3
+15/16th & Locust St. waiting: 166 total : 11
+Train A: Total Riders: 39 Current Stop : Broadway
+Train B: Total Riders: 69 Current Stop : In Transit...
+Total Rides Complete: 43
+
+Current time: 12:17
+Lindenwold waiting: 71 total : 0
+Ashland waiting: 21 total : 7
+Woodcrest waiting: 39 total : 11
+Haddonfield waiting: 25 total : 12
+Westmont waiting: 2 total : 34
+Collingswood waiting: 3 total : 18
+Ferry Avenue waiting: 11 total : 25
+Broadway waiting: 8 total : 66
+City Hall waiting: 16 total : 13
+8th & Market St. waiting: 86 total : 53
+9/10th & Locust St. waiting: 25 total : 4
+12/13th & Locust St. waiting: 37 total : 3
+15/16th & Locust St. waiting: 177 total : 11
+Train A: Total Riders: 48 Current Stop : In Transit...
+Train B: Total Riders: 69 Current Stop : Westmont
+Total Rides Complete: 45
+
+Current time: 12:18
+Lindenwold waiting: 78 total : 0
+Ashland waiting: 21 total : 7
+Woodcrest waiting: 40 total : 11
+Haddonfield waiting: 28 total : 12
+Westmont waiting: 4 total : 34
+Collingswood waiting: 3 total : 18
+Ferry Avenue waiting: 15 total : 25
+Broadway waiting: 15 total : 66
+City Hall waiting: 0 total : 29
+8th & Market St. waiting: 98 total : 53
+9/10th & Locust St. waiting: 28 total : 4
+12/13th & Locust St. waiting: 39 total : 3
+15/16th & Locust St. waiting: 179 total : 11
+Train A: Total Riders: 48 Current Stop : City Hall
+Train B: Total Riders: 67 Current Stop : In Transit...
+Total Rides Complete: 56
+
+Current time: 12:19
+Lindenwold waiting: 79 total : 0
+Ashland waiting: 21 total : 7
+Woodcrest waiting: 43 total : 11
+Haddonfield waiting: 0 total : 40
+Westmont waiting: 5 total : 34
+Collingswood waiting: 3 total : 18
+Ferry Avenue waiting: 16 total : 25
+Broadway waiting: 20 total : 66
+City Hall waiting: 2 total : 29
+8th & Market St. waiting: 103 total : 53
+9/10th & Locust St. waiting: 30 total : 4
+12/13th & Locust St. waiting: 40 total : 3
+15/16th & Locust St. waiting: 189 total : 11
+Train A: Total Riders: 45 Current Stop : In Transit...
+Train B: Total Riders: 67 Current Stop : Haddonfield
+Total Rides Complete: 62
+
+Current time: 12:20
+Lindenwold waiting: 79 total : 0
+Ashland waiting: 22 total : 7
+Woodcrest waiting: 47 total : 11
+Haddonfield waiting: 2 total : 40
+Westmont waiting: 5 total : 34
+Collingswood waiting: 4 total : 18
+Ferry Avenue waiting: 18 total : 25
+Broadway waiting: 24 total : 66
+City Hall waiting: 4 total : 29
+8th & Market St. waiting: 119 total : 53
+9/10th & Locust St. waiting: 33 total : 4
+12/13th & Locust St. waiting: 40 total : 3
+15/16th & Locust St. waiting: 207 total : 11
+Train A: Total Riders: 45 Current Stop : In Transit...
+Train B: Total Riders: 66 Current Stop : In Transit...
+Total Rides Complete: 72
+
+Current time: 12:21
+Lindenwold waiting: 86 total : 0
+Ashland waiting: 22 total : 7
+Woodcrest waiting: 48 total : 11
+Haddonfield waiting: 5 total : 40
+Westmont waiting: 8 total : 34
+Collingswood waiting: 5 total : 18
+Ferry Avenue waiting: 18 total : 25
+Broadway waiting: 27 total : 66
+City Hall waiting: 6 total : 29
+8th & Market St. waiting: 129 total : 53
+9/10th & Locust St. waiting: 34 total : 4
+12/13th & Locust St. waiting: 42 total : 3
+15/16th & Locust St. waiting: 223 total : 11
+Train A: Total Riders: 45 Current Stop : In Transit...
+Train B: Total Riders: 66 Current Stop : In Transit...
+Total Rides Complete: 72
+
+Current time: 12:22
+Lindenwold waiting: 88 total : 0
+Ashland waiting: 24 total : 7
+Woodcrest waiting: 1 total : 59
+Haddonfield waiting: 6 total : 40
+Westmont waiting: 10 total : 34
+Collingswood waiting: 7 total : 18
+Ferry Avenue waiting: 18 total : 25
+Broadway waiting: 34 total : 66
+City Hall waiting: 9 total : 29
+8th & Market St. waiting: 139 total : 53
+9/10th & Locust St. waiting: 36 total : 4
+12/13th & Locust St. waiting: 46 total : 3
+15/16th & Locust St. waiting: 238 total : 11
+Train A: Total Riders: 45 Current Stop : In Transit...
+Train B: Total Riders: 66 Current Stop : Woodcrest
+Total Rides Complete: 72
+
+Current time: 12:23
+Lindenwold waiting: 93 total : 0
+Ashland waiting: 24 total : 7
+Woodcrest waiting: 5 total : 59
+Haddonfield waiting: 8 total : 40
+Westmont waiting: 12 total : 34
+Collingswood waiting: 7 total : 18
+Ferry Avenue waiting: 22 total : 25
+Broadway waiting: 42 total : 66
+City Hall waiting: 9 total : 29
+8th & Market St. waiting: 19 total : 192
+9/10th & Locust St. waiting: 37 total : 4
+12/13th & Locust St. waiting: 47 total : 3
+15/16th & Locust St. waiting: 247 total : 11
+Train A: Total Riders: 45 Current Stop : 8th & Market St.
+Train B: Total Riders: 63 Current Stop : In Transit...
+Total Rides Complete: 84
+
+Current time: 12:24
+Lindenwold waiting: 96 total : 0
+Ashland waiting: 2 total : 31
+Woodcrest waiting: 8 total : 59
+Haddonfield waiting: 9 total : 40
+Westmont waiting: 14 total : 34
+Collingswood waiting: 7 total : 18
+Ferry Avenue waiting: 24 total : 25
+Broadway waiting: 44 total : 66
+City Hall waiting: 10 total : 29
+8th & Market St. waiting: 35 total : 192
+9/10th & Locust St. waiting: 40 total : 4
+12/13th & Locust St. waiting: 50 total : 3
+15/16th & Locust St. waiting: 256 total : 11
+Train A: Total Riders: 64 Current Stop : In Transit...
+Train B: Total Riders: 63 Current Stop : Ashland
+Total Rides Complete: 95
+
+Current time: 12:25
+Lindenwold waiting: 100 total : 0
+Ashland waiting: 5 total : 31
+Woodcrest waiting: 8 total : 59
+Haddonfield waiting: 12 total : 40
+Westmont waiting: 15 total : 34
+Collingswood waiting: 7 total : 18
+Ferry Avenue waiting: 24 total : 25
+Broadway waiting: 46 total : 66
+City Hall waiting: 11 total : 29
+8th & Market St. waiting: 40 total : 192
+9/10th & Locust St. waiting: 0 total : 44
+12/13th & Locust St. waiting: 50 total : 3
+15/16th & Locust St. waiting: 267 total : 11
+Train A: Total Riders: 64 Current Stop : 9/10th & Locust St.
+Train B: Total Riders: 56 Current Stop : In Transit...
+Total Rides Complete: 107
+
+Current time: 12:26
+Lindenwold waiting: 106 total : 0
+Ashland waiting: 7 total : 31
+Woodcrest waiting: 8 total : 59
+Haddonfield waiting: 13 total : 40
+Westmont waiting: 15 total : 34
+Collingswood waiting: 7 total : 18
+Ferry Avenue waiting: 26 total : 25
+Broadway waiting: 52 total : 66
+City Hall waiting: 11 total : 29
+8th & Market St. waiting: 56 total : 192
+9/10th & Locust St. waiting: 3 total : 44
+12/13th & Locust St. waiting: 4 total : 53
+15/16th & Locust St. waiting: 281 total : 11
+Train A: Total Riders: 53 Current Stop : 12/13th & Locust St.
+Train B: Total Riders: 56 Current Stop : In Transit...
+Total Rides Complete: 122
+
+Current time: 12:27
+Lindenwold waiting: 7 total : 106
+Ashland waiting: 9 total : 31
+Woodcrest waiting: 9 total : 59
+Haddonfield waiting: 14 total : 40
+Westmont waiting: 18 total : 34
+Collingswood waiting: 8 total : 18
+Ferry Avenue waiting: 28 total : 25
+Broadway waiting: 53 total : 66
+City Hall waiting: 13 total : 29
+8th & Market St. waiting: 72 total : 192
+9/10th & Locust St. waiting: 3 total : 44
+12/13th & Locust St. waiting: 4 total : 53
+15/16th & Locust St. waiting: 21 total : 292
+Train A: Total Riders: 41 Current Stop : 15/16th & Locust St.
+Train B: Total Riders: 56 Current Stop : Lindenwold
+Total Rides Complete: 138
+
+Current time: 12:28
+Lindenwold waiting: 9 total : 106
+Ashland waiting: 11 total : 31
+Woodcrest waiting: 9 total : 59
+Haddonfield waiting: 14 total : 40
+Westmont waiting: 18 total : 34
+Collingswood waiting: 8 total : 18
+Ferry Avenue waiting: 28 total : 25
+Broadway waiting: 55 total : 66
+City Hall waiting: 14 total : 29
+8th & Market St. waiting: 72 total : 192
+9/10th & Locust St. waiting: 6 total : 44
+12/13th & Locust St. waiting: 5 total : 53
+15/16th & Locust St. waiting: 41 total : 292
+Train A: Total Riders: 28 Current Stop : In Transit...
+Train B: Total Riders: 138 Current Stop : In Transit...
+Total Rides Complete: 168
+
+Current time: 12:29
+Lindenwold waiting: 12 total : 106
+Ashland waiting: 11 total : 31
+Woodcrest waiting: 12 total : 59
+Haddonfield waiting: 17 total : 40
+Westmont waiting: 20 total : 34
+Collingswood waiting: 9 total : 18
+Ferry Avenue waiting: 31 total : 25
+Broadway waiting: 63 total : 66
+City Hall waiting: 14 total : 29
+8th & Market St. waiting: 90 total : 192
+9/10th & Locust St. waiting: 9 total : 44
+12/13th & Locust St. waiting: 2 total : 58
+15/16th & Locust St. waiting: 60 total : 292
+Train A: Total Riders: 28 Current Stop : 12/13th & Locust St.
+Train B: Total Riders: 138 Current Stop : In Transit...
+Total Rides Complete: 168
+
+Current time: 12:30
+Lindenwold waiting: 16 total : 106
+Ashland waiting: 11 total : 31
+Woodcrest waiting: 12 total : 59
+Haddonfield waiting: 19 total : 40
+Westmont waiting: 23 total : 34
+Collingswood waiting: 10 total : 18
+Ferry Avenue waiting: 35 total : 25
+Broadway waiting: 64 total : 66
+City Hall waiting: 17 total : 29
+8th & Market St. waiting: 99 total : 192
+9/10th & Locust St. waiting: 0 total : 53
+12/13th & Locust St. waiting: 6 total : 58
+15/16th & Locust St. waiting: 79 total : 292
+Train A: Total Riders: 28 Current Stop : 9/10th & Locust St.
+Train B: Total Riders: 138 Current Stop : In Transit...
+Total Rides Complete: 172
+
+Current time: 12:31
+Lindenwold waiting: 19 total : 106
+Ashland waiting: 0 total : 42
+Woodcrest waiting: 16 total : 59
+Haddonfield waiting: 19 total : 40
+Westmont waiting: 26 total : 34
+Collingswood waiting: 11 total : 18
+Ferry Avenue waiting: 36 total : 25
+Broadway waiting: 71 total : 66
+City Hall waiting: 20 total : 29
+8th & Market St. waiting: 102 total : 192
+9/10th & Locust St. waiting: 3 total : 53
+12/13th & Locust St. waiting: 8 total : 58
+15/16th & Locust St. waiting: 87 total : 292
+Train A: Total Riders: 32 Current Stop : In Transit...
+Train B: Total Riders: 138 Current Stop : Ashland
+Total Rides Complete: 176
